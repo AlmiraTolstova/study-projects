@@ -57,7 +57,7 @@ body {
 }
 
 /* скрываем на мобильных */
-@media (max-width: 768px) {
+@media (max-width: 390px) {
   .top-nav {
     display: none;
   }
@@ -69,7 +69,6 @@ body {
   padding: 14.4375rem 0 14.5rem;
 }
 .container {
-  /* border: 2px solid black; */
   max-width: 81rem;
   margin: auto;
 }
@@ -107,7 +106,7 @@ h1 {
   gap: 0.75rem;
 }
 
-@media (max-width: 390px) {
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .header {
     padding: 6.625rem 0 15rem;
   }
@@ -182,7 +181,7 @@ h1 {
   justify-content: center;
   z-index: 2;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .banner-cookie {
     width: 390px;
     flex-direction: column;
@@ -236,7 +235,7 @@ h1 {
   text-transform: uppercase;
   color: #ffffff;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .block-overlay {
     margin-left: 24px;
     margin-right: 24px;
@@ -279,8 +278,8 @@ h1 {
   margin: auto;
   display: grid;
   padding-top: 5rem;
-  grid-template-columns: repeat(3, 380px);
-  grid-template-rows: repeat(2, 800px);
+  grid-template-columns: repeat(3, 23.75rem);
+  grid-template-rows: repeat(2, 50rem);
   column-gap: 3.25rem;
   justify-self: center;
 }
@@ -334,7 +333,14 @@ h1 {
 .speaker__link:hover {
   text-decoration: underline;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 768px) and (max-device-width: 1296px) {
+  .speakers-grid {
+    max-width: 55rem;
+    grid-template-columns: repeat(3, 16rem);
+    grid-template-rows: repeat(2, 50rem);
+  }
+}
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .speakers-container {
     padding-bottom: 6.25rem;
   }
@@ -432,16 +438,23 @@ h1 {
   text-transform: uppercase;
   color: #ffffff;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 768px) and (max-device-width: 1296px) {
+  .container {
+    max-width: 55rem;
+  }
+  .tickets-img {
+    width: 25rem;
+  }
+}
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .ticket-container {
     display: flex;
     align-items: stretch; /* img будет притягиваться вплотную */
     flex-direction: column; /* Разворот “на 90 градусов” */
-    /* justify-content: space-between; */
+
     align-items: center;
     text-align: center;
   }
-
   .ticket-container img {
     margin: 0;
     padding: 0;
@@ -455,7 +468,6 @@ h1 {
   .tickets-block1 img {
     width: 342px;
   }
-
   .ticket-container img {
     display: none;
   }
@@ -475,18 +487,15 @@ h1 {
     font-size: 40px;
     line-height: 50px;
   }
-
   .ticket-text {
     padding-left: 0;
     margin-top: 1rem;
   }
-
   .ticket-text1,
   .ticket-text2,
   .ticket-text3 {
     line-height: normal;
   }
-
   .ticket-gray {
     padding: 1.5rem 0;
   }
@@ -597,7 +606,7 @@ h1 {
   line-height: 30px;
   padding-bottom: 1.625rem;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .dark-section {
     padding-bottom: 2, 5rem;
   }
@@ -683,7 +692,15 @@ h1 {
   color: #323232;
   text-align: left;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 768px) and (max-device-width: 1296px) {
+  .num-block_block img {
+    width: 15rem;
+  }
+  .num-block_image img {
+    width: 30rem;
+  }
+}
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .numbers h4 {
     font-size: 17.85px;
     line-height: 36px;
@@ -749,7 +766,7 @@ h1 {
   line-height: 30px;
   color: #ffffff;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .insights-title {
     width: 15rem;
     font-size: 34.7238px;
@@ -805,7 +822,7 @@ h1 {
   line-height: 30px;
   color: #212529;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .yellow-overlay {
     width: 21.375rem;
     padding: 3rem 2.25rem 3rem;
@@ -927,7 +944,12 @@ input[type="email"] {
 .submit-btn:hover {
   background-color: #333;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 768px) and (max-device-width: 1296px) {
+  .updates-block1 img {
+    display: none;
+  }
+}
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .updates-section {
     padding-top: 16rem;
   }
@@ -997,7 +1019,12 @@ input[type="email"] {
   color: #ffffff;
   margin-bottom: 2.3125rem;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 768px) and (max-device-width: 1296px) {
+  .video-block1 img {
+    width: 50rem;
+  }
+}
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .video-block1 img {
     width: 21.375rem;
   }
@@ -1056,7 +1083,15 @@ input[type="email"] {
   gap: 5.75rem;
   justify-content: center;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 768px) and (max-device-width: 1296px) {
+  .partnership-contentsquare {
+    width: 25rem;
+  }
+  .partnership-3logos img {
+    width: 15rem;
+  }
+}
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .partnership-section {
     margin-top: 5rem;
     margin-bottom: 6rem;
@@ -1179,7 +1214,7 @@ footer {
   text-decoration-line: underline;
   color: #ffffff;
 }
-@media (max-width: 390px) {
+@media (min-device-width: 390px) and (max-device-width: 768px) {
   .footer-block1 {
     flex-direction: column;
   }
@@ -1191,58 +1226,5 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-}
-
-/* ============ ✅ МОБИЛЬНАЯ ВЕРСИЯ ============ */
-@media (min-device-width: 400px) and (max-device-width: 768px) {
-  header.hero {
-    padding: 80px 0;
-    text-align: center;
-  }
-
-  .container-blocks {
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero-buttons .btn {
-    width: 90%;
-    text-align: center;
-    font-size: 17px;
-    padding: 16px;
-  }
-
-  .speakers-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-  }
-
-  .ticket {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-  }
-
-  .two-col {
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 0;
-  }
-
-  .two-col img {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .num-block h1 {
-    font-size: 56px;
-  }
-
-  .footer-register input {
-    width: 90%;
   }
 }
