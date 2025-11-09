@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front-end 32.1: Учебный проект: Вводные данные и 1, 2 экраны</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="">
+    <!-- TOP-NAVIGATION -->
+    <div class="top-nav">
+      <div class="container top-nav-inner">
+        <span class="top-nav-text">
+          NOVEMBER 2ND–3RD 2023 | NEW CENTER, BERLINE
+        </span>
+        <button class="top-nav-btn">SEE YOU IN 2024</button>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
+        <div class="container-blocks">
+          <h1>А FRESH TAKE ON CREATING WEBSITES AND PRODUCTS PEOPLE LOVE</h1>
+          <div class="container-block1">
+            <p class="header-text header-text_block1">
+              This year we came together in Berline for our first-ever HOTSAUCE
+              conference. Over two days, some of the brightest minds in product,
+              marketing, ecommerce, and UX joined us to connect over the future
+              of digital experiences—and we had a blast.
+            </p>
+            <p class="header-text header-text_block2">
+              Join us next year for more visionary keynotes, peer-led
+              roundtables, Hotjar masterclasses, and new connections. Be the
+              first to learn about HOTSAUCE 2024 by subscribing to our
+              newsletter.
+            </p>
+            <button class="btn dark">Get Updates</button>
+          </div>
+          <div class="container-block2">
+            <img src="icons/SVG.svg" alt="It's logo" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BLOCK-OVERLAY  -->
+    <div class="block-overlay">
+      <h2>Be the first to know about HOTSAUCE 2024</h2>
+      <button class="btn-big">Get Updates</button>
+    </div>
+
+    <!-- COOKIE-BANNER -->
+    <div class="cookie-overlay" id="cookieOverlay">
+      <div class="banner-cookie">
+        <div class="banner-cookie_text">
+          <h6>Cookies</h6>
+          <p>
+            We use cookies to provide visitors with the best possible experience
+            on our website. These include analytics, functionality, and
+            targeting cookies, which may also be used in our marketing efforts.
+            Click the button to agree to the use of cookies or click ‘Cookie
+            settings’ to manage your preferences. <span>Cookie Policy</span>
+          </p>
+        </div>
+        <button id="cookiesSettingsBtn" class="btn outline">
+          Cookie settings
+        </button>
+        <button id="cookiesRejectAllBtn" class="btn blue">Reject All</button>
+        <button id="cookiesAcceptBtn" class="btn blue">Accept</button>
+      </div>
+    </div>
+
+    <!-- SEKTION SPEAKERS -->
+    <section class="speakers">
+      <h2 class="speakers-title">OUR SPEAKERS</h2>
+      <div class="speakers-container">
+        <div class="speakers-grid">
+          <div class="speaker">
+            <img
+              src="images/speakers/Speaker-Keisha-Mabry.png.png"
+              alt="Keisha Mabry"
+              class="speaker__img"
+            />
+            <h3 class="speaker__name">KEISHA MABRY</h3>
+            <p class="speaker__role">
+              Founder<br /><span class="speaker__company">Heydays</span>
+            </p>
+            <a href="#" class="speaker__link">VIEW BIO</a>
+          </div>
+
+          <div class="speaker speaker-center">
+            <img
+              src="images/speakers/Speaker-Chris-Do.png.png"
+              alt="Chris Do"
+              class="speaker__img"
+            />
+            <h3 class="speaker__name">CHRIS DO</h3>
+            <p class="speaker__role">
+              Founder<br /><span class="speaker__company">The Futur</span>
+            </p>
+            <a href="#" class="speaker__link">VIEW BIO</a>
+          </div>
+
+          <div class="speaker speaker-end">
+            <img
+              src="images/speakers/Speaker-Rand-Fishkin.png.png"
+              alt="Rand Fishkin"
+              class="speaker__img"
+            />
+            <h3 class="speaker__name">RAND FISHKIN</h3>
+            <p class="speaker__role">
+              Cofounder & CEO<br /><span class="speaker__company"
+                >SparkToro</span
+              >
+            </p>
+            <a href="#" class="speaker__link">VIEW BIO</a>
+          </div>
+
+          <div class="speaker">
+            <img
+              src="images/speakers/Speaker-Ioana-Teleanu.png.png"
+              alt="Ioana-Teleanu"
+              class="speaker__img"
+            />
+            <h3 class="speaker__name">Ioana Teleanu</h3>
+            <p class="speaker__role">
+              Lead Product Designer, AI<br /><span class="speaker__company"
+                >Miro</span
+              >
+            </p>
+            <a href="#" class="speaker__link">VIEW BIO</a>
+          </div>
+
+          <div class="speaker speaker-center">
+            <img
+              src="images/speakers/Speaker-Kyle-Poyar.png.png"
+              alt="Kyle Poyar"
+              class="speaker__img"
+            />
+            <h3 class="speaker__name">KYLE POYAR</h3>
+            <p class="speaker__role">
+              Operating Partner<br /><span class="speaker__company"
+                >OpenView</span
+              >
+            </p>
+            <a href="#" class="speaker__link">VIEW BIO</a>
+          </div>
+
+          <div class="speaker speaker-end">
+            <img
+              src="images/speakers/Speaker-Sauce-CTA.png.png"
+              alt="Speaker-Sauce-CTA"
+              class="speaker__img"
+            />
+            <div class="speaker__blob"></div>
+            <h3 class="speaker__name">+ Many more industry experts</h3>
+            <a href="#" class="speaker__link">VIEW ALL SPEAKERS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEKTION TICKETS -->
+    <section class="tickets">
+      <div class="container container-tickets">
+        <div class="tickets-block1">
+          <h2>Join us at</h2>
+          <img
+            class="tickets-img"
+            src="images/Figure → hotsauce-logo-dark.svg.svg"
+            alt="hotsauce-logo"
+          />
+        </div>
+        <img class="tickets-logo" src="icons/SVG.svg" alt="logo" />
+      </div>
+
+      <div class="container ticket-list">
+        <div class="ticket-container">
+          <img src="images/tickets/ticket-left.svg" alt="" />
+          <div class="ticket-white">
+            <div class="ticket-price">$319</div>
+            <img src="images/tickets/group.svg" alt="object" />
+            <div class="ticket-text">
+              <p class="ticket-text1">Super Early Bird</p>
+              <p class="ticket-text2">Save 46%!</p>
+              <p class="ticket-text3">Ends July 31</p>
+            </div>
+          </div>
+          <div class="ticket-gray">
+            <span class="ticket-sold">SOLD OUT</span>
+          </div>
+          <img src="images/tickets/__after.svg" alt="" />
+        </div>
+
+        <div class="ticket-container">
+          <img src="images/tickets/ticket-left.svg" alt="" />
+          <div class="ticket-white">
+            <div class="ticket-price">$399</div>
+            <img src="images/tickets/group.svg" alt="object" />
+            <div class="ticket-text">
+              <p class="ticket-text1">Early Bird</p>
+              <p class="ticket-text2">Save 33%!</p>
+              <p class="ticket-text3">Ends September 8</p>
+            </div>
+          </div>
+          <div class="ticket-gray">
+            <span class="ticket-sold">SOLD OUT</span>
+          </div>
+          <img src="images/tickets/__after.svg" alt="" />
+        </div>
+
+        <div class="ticket-container">
+          <img src="images/tickets/ticket-left.svg" alt="" />
+          <div class="ticket-white">
+            <div class="ticket-price">$599</div>
+            <img src="images/tickets/group.svg" alt="object" />
+            <div class="ticket-text">
+              <p class="ticket-text1">General Admission</p>
+            </div>
+          </div>
+          <div class="ticket-gray">
+            <span class="ticket-sold">SOLD OUT</span>
+          </div>
+          <img src="images/tickets/__after.svg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK DARK-SECTIONS -->
+    <section class="dark-section">
+      <div class="container dark-section_container dark-section_block1">
+        <div class="">
+          <h2 class="dark-section_title">BUILD MORE EMPATHY</h2>
+          <p class="dark-section_text">
+            HOTSAUCE isn’t just another conference. It's a chance to rethink the
+            user experience after an era of disruption.
+          </p>
+          <p class="dark-section_text">
+            Since 2020 the world has shifted. Accelerated trends have made user
+            behavior increasingly unpredictable and we need to stay ahead.
+            Across product, ecommerce, and marketing, HOTSAUCE will give you the
+            tools you need to evolve with these changes.
+          </p>
+          <p class="dark-section_text">
+            Over two days, we’ll share inspirational stories, dive deep into
+            empathy, and strengthen our connection with what our users truly
+            need.
+          </p>
+        </div>
+        <img
+          src="images/Picture → nyc-hotsauce-poster.jpg.png"
+          alt="nyc-hotsauce-poster"
+        />
+      </div>
+
+      <div class="container dark-section_container dark-section_block2">
+        <img
+          src="images/Picture → networking-with-a-kick.jpg.png"
+          alt="networking-with-a-kick img"
+        />
+        <div>
+          <h2 class="dark-section_title">CONNECT WITH THE COMMUNITY</h2>
+          <p class="dark-section_text">
+            We’re experts at crafting experiences, and as a remote company, we
+            know a thing or two about bringing people together.
+          </p>
+          <p class="dark-section_text">
+            Bespoke co-working corners, workshops, round table discussions, and
+            fun activation stations—dedicated “unconference” areas to meet
+            people you already share a connection with—will make networking and
+            problem-solving flow smoothly.
+          </p>
+          <p class="dark-section_text">
+            The sauce is out the bottle—no more small talk about the weather.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK NUMBERS-SECTIONS -->
+    <section class="numbers">
+      <h4>Three reasons to attend Hotsauce</h4>
+      <div class="container">
+        <div class="num-block">
+          <div class="num-block_block">
+            <img src="images/numbers/01.svg" alt="01" />
+            <h3 class="title">BECOME A DIGITAL EXPERIENCES PRO.</h3>
+            <p class="num-block_text">
+              We live and breathe digital experiences for a broad segment of
+              audiences, so we're here to help you become a true expert in your
+              craft.
+            </p>
+          </div>
+          <div class="num-block_image">
+            <img
+              src="images/numbers/Figure → Digital-Experiences.jpg.png"
+              alt="Figure → Digital-Experiences"
+            />
+          </div>
+        </div>
+
+        <div class="num-block num-block_reverse">
+          <div class="num-block_image">
+            <img
+              src="images/numbers/Figure → Hands-on-Learning.jpg.png"
+              alt="Figure → Hands-on-Learning"
+            />
+          </div>
+          <div class="num-block_block">
+            <img src="images/numbers/02.svg" alt="02" />
+            <h3 class="title">Get inspired by hands- on learnings.</h3>
+            <p class="num-block_text">
+              Over 40 collaborative work together sessions will give you
+              actionable insights you can apply directly when back at the desk.
+            </p>
+          </div>
+        </div>
+
+        <div class="num-block">
+          <div class="num-block_block">
+            <img src="images/numbers/03.svg" alt="01" />
+            <h3 class="title">BECOME A DIGITAL EXPERIENCES PRO.</h3>
+            <p class="num-block_text">
+              We live and breathe digital experiences for a broad segment of
+              audiences, so we're here to help you become a true expert in your
+              craft.
+            </p>
+          </div>
+          <div class="num-block_image">
+            <img
+              src="images/numbers/Figure → Make-Meaningful-Connections.jpg.png"
+              alt="Figure → Digital-Experiences"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK INSIGHTS-SECTIONS -->
+    <section class="insights-section">
+      <div class="container">
+        <h2 class="insights-title">Endless insights, in one place</h2>
+        <div class="insights-blocks">
+          <div class="insights-block">
+            <img
+              src="icons/insights-section/icon-academy-darkbg.jpg.svg"
+              alt="icon-academy-darkbg"
+            />
+            <h4>The Academy</h4>
+            <p>
+              Become a certified Hotjar expert and walk away with some
+              extra-firepower under your belt. Sign up for an exclusive and
+              tailored deep dive into our product to learn how to use Hotjar to
+              suit your needs.
+            </p>
+          </div>
+
+          <div class="insights-block">
+            <img
+              src="icons/insights-section/icon-labs-darkbg.jpg.svg"
+              alt="icon-labs-darkbg"
+            />
+            <h4>The Lab</h4>
+            <p>
+              Meet the minds behind Hotjar and chat with our team as they work
+              on new feature updates and releases. This is your opportunity to
+              demo the product through the eyes of the people who built it.
+            </p>
+          </div>
+
+          <div class="insights-block">
+            <img
+              src="icons/insights-section/icon-experience-darkbg.jpg.svg"
+              alt="icon-experience-darkbg"
+            />
+            <h4>The connections</h4>
+            <p>
+              Meet headline speakers and professionals in similar roles facing
+              similar challenges. Discover new ways of thinking that will have
+              an immediate impact on your work and the way you approach digital
+              experiences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK-YELLOW-OVERLAY  -->
+    <div class="yellow-overlay">
+      <div>
+        <h6>Become a partner</h6>
+        <p>
+          Looking to expand your company’s reach, amplify your message, or
+          connect with key decision-makers? Become a HOTSAUCE partner. Get in
+          touch to learn more about partnership options.
+        </p>
+      </div>
+      <div>
+        <button class="btn">Become a partner</button>
+      </div>
+    </div>
+
+    <!-- BLOCK UPDATES-SECTIONS -->
+    <section class="updates-section">
+      <div class="container">
+        <div class="updates-block1">
+          <div class="updates-block1_text">
+            <h3>Get Hotsauce updates</h3>
+            <p>
+              Join us next year for more visionary keynotes, peer-led
+              roundtables, Hotjar masterclasses, and new connections. Be the
+              first to learn about HOTSAUCE 2024 by subscribing to our
+              newsletter.
+            </p>
+          </div>
+          <img
+            src="images/Figure → fom-blob-graphic.png.png"
+            alt="fom-blob-graphic"
+          />
+        </div>
+        <div class="updates-form-container">
+          <form class="updates-form">
+            <div class="updates-form_row">
+              <div class="form-group">
+                <label for="first-name"
+                  >First Name <span class="required">*</span></label
+                >
+                <input type="text" id="first-name" name="first-name" required />
+              </div>
+              <div class="form-group">
+                <label for="last-name"
+                  >Last Name <span class="required">*</span></label
+                >
+                <input type="text" id="last-name" name="last-name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+
+            <div class="checkbox-row">
+              <input type="checkbox" id="agree" name="agree" />
+              <label for="agree"
+                >By checking this box, you agree to our End User Terms and
+                Privacy Policy</label
+              >
+            </div>
+            <div>
+              <button class="btn dark">SIGN ME UP</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK VIDEO-SECTIONS -->
+    <section class="video-section">
+      <div class="container">
+        <div class="video-block1">
+          <img src="images/Iframe.png" alt="video image" />
+        </div>
+        <div class="video-block2">
+          <div class="video-block2_text">
+            <h5>Join us at the iconic Javits Center</h5>
+            <p>
+              This self-sustaining New York icon has become a wildlife
+              sanctuary, community partner and international meeting point where
+              the latest ideas in business and pop culture converge under one
+              very green roof.
+            </p>
+          </div>
+          <div class="video-block2_adress">
+            <p>North Javits Center 445 11th Ave, New York, NY 10001, USA</p>
+            <button class="btn">View Map</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK PARTNERSHIP-SECTIONS -->
+    <section>
+      <div class="container partnership-section">
+        <h2>In partnership with</h2>
+        <div class="partnership-contentsquare">
+          <img
+            src="icons/partnership/contentsquare-logo.svg.png"
+            alt="contentsquare-logo"
+          />
+        </div>
+        <div class="partnership-strip"></div>
+        <div class="partnership-3logos">
+          <img
+            src="icons/partnership/unbounce-logo.svg.png"
+            alt="unbounce-logo"
+          />
+          <img
+            src="icons/partnership/ab-tasty-logo.svg.png"
+            alt="ab-tasty-logo"
+          />
+          <img
+            src="icons/partnership/chili-piper-logo.svg.png"
+            alt="chili-piper-logo"
+          />
+        </div>
+        <div class="partnership-2logos">
+          <img src="icons/partnership/appcues-logo.svg.png" alt="" />
+          <img src="icons/partnership/unbounce-logo-1.svg.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK FAQS-SECTIONS -->
+    <section class="section-faqs">
+      <div class="container faqs">
+        <h2>FAQS</h2>
+        <div class="accordion">
+          <div class="item">
+            <input type="checkbox" id="q1" />
+            <label for="q1" class="accordion-title"> Who is this for? </label>
+            <div class="content">
+              HOTSAUCE is for anyone working in marketing, product, UX design,
+              and ecommerce but if you own a website or product you want to
+              improve, you’ll also find it useful. The aim is to inspire you by
+              giving you the tools you need to empathize with your audience and
+              improve your digital experience.
+            </div>
+          </div>
+
+          <div class="item">
+            <input type="checkbox" id="q2" />
+            <label for="q2" class="accordion-title"
+              >Is the venue accessible?</label
+            >
+            <div class="content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores, molestiae velit. Maiores quis consequuntur, optio
+              ullam reiciendis sapiente vero rem?
+            </div>
+          </div>
+
+          <div class="item">
+            <input type="checkbox" id="q3" />
+            <label for="q3" class="accordion-title"
+              >How sustainable are events at Javits Center?</label
+            >
+            <div class="content">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <div class="item">
+            <input type="checkbox" id="q4" />
+            <label for="q4" class="accordion-title"
+              >What’s included in the ticket price?</label
+            >
+            <div class="content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam,
+              et?
+            </div>
+          </div>
+
+          <div class="item">
+            <input type="checkbox" id="q5" />
+            <label for="q5" class="accordion-title"
+              >What’s the dress code?</label
+            >
+            <div class="content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto vel
+              hic dolor accusantium, enim rerum eius sint cumque nulla
+              voluptatibus.
+            </div>
+          </div>
+
+          <div class="item">
+            <input type="checkbox" id="q6" />
+            <label for="q6" class="accordion-title">Where can I stay?</label>
+            <div class="content">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+              accusamus dolorem quaerat voluptates aliquid optio dicta quia!
+              Eius, soluta cupiditate praesentium vero nam eveniet, est, culpa
+              ducimus natus in aperiam.
+            </div>
+          </div>
+
+          <div class="item">
+            <input type="checkbox" id="q7" />
+            <label for="q7" class="accordion-title"
+              >I’ve bought a ticket but can no longer attend, what do I
+              do?</label
+            >
+            <div class="content">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-block1">
+          <img src="images/hotsauce-logo-white.svg.svg" alt="hotsauce-logo" />
+          <div><button class="btn">Visit Hotjar.com</button></div>
+        </div>
+        <div class="footer-block2">
+          <span>© 2024 HotSauce Conference</span>
+          <a href="">Terms & Conditions</a>
+          <a href="">Privacy Policy</a>
+          <a href="">Code of Conduct</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="scripts/script.js"></script>
+</html>
