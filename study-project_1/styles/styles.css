@@ -393,12 +393,25 @@ h1 {
   /* justify-content: space-evenly; */
   align-items: center;
 }
+/* ------------- */
+.ticket-imgleft {
+  background: url("/study-project_1/images/tickets/ticket-left.svg")
+    center/cover no-repeat;
+  width: 14px;
+  height: 220px;
+}
+.ticket-imgright {
+  background: url("/study-project_1/images/tickets/ticket-right.svg")
+    center/cover no-repeat;
+  width: 14px;
+  height: 220px;
+}
 .ticket-price {
   font-weight: 700;
   font-size: 54.6094px;
   line-height: 90px;
   color: #212529;
-  padding: 2.8125rem 4.6875 2.8125rem 3.75rem;
+  padding: 2.8125rem 4.6875rem 2.8125rem 3.75rem;
 }
 .ticket-text {
   padding-left: 3.75rem;
@@ -447,6 +460,19 @@ h1 {
   }
 }
 @media (min-device-width: 390px) and (max-device-width: 768px) {
+  .ticket-imgleft {
+    background: url("/study-project_1/images/tickets/ticket-top.svg")
+      center/cover no-repeat;
+    height: 14px;
+    width: 342px;
+  }
+  .ticket-imgright {
+    background: url("/study-project_1/images/tickets/ticket-bottom.svg")
+      center/cover no-repeat;
+    height: 14px;
+    width: 342px;
+  }
+
   .ticket-container {
     display: flex;
     align-items: stretch; /* img будет притягиваться вплотную */
