@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!-- <h1>Login Page</h1>
+    <a href="/register.html">Register</a>
+    <a href="/login.html">Login</a>
+    <a href="/profile.html">Profile</a> -->
+
+    <div class="container">
+      <div class="login-container">
+        <h2>Авторизация</h2>
+
+        <form id="login-form">
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+
+          <div class="input-group">
+            <label>Пароль</label>
+            <input type="password" name="password" required />
+          </div>
+
+          <button type="submit" class="btn">Войти</button>
+        </form>
+
+        <p id="login-message" class="message"></p>
+
+        <p style="text-align: center; margin-top: 1rem">
+          Нет аккаунта? <a href="register.html">Регистрация</a>
+        </p>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
