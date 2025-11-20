@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@300;400;500&display=swap"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="date-container">
+        <h1 class="day">Среда</h1>
+        <p class="date">3 января</p>
+      </div>
+      <div class="search">
+        <input id="search" type="" placeholder="Поиск" />
+        <span class="material-symbols-rounded icon">search</span>
+      </div>
+
+      <div class="tabs">
+        <button id="btnAll" class="active">✔ Все</button>
+        <button id="btnActive">Активные</button>
+        <button id="btnDone">Завершенные</button>
+      </div>
+      <div class="tasks-list">
+        <div class="task done">
+          <label>
+            <input type="checkbox" checked />
+            <div class="task-info">
+              <span class="time">10 января, 11:30</span>
+              <span class="title done-text">Покормить кошку</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="task">
+          <label>
+            <input type="checkbox" />
+            <div class="task-info">
+              <span class="time">10 января, 11:30</span>
+              <span class="title">Покормить кошку</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="task">
+          <label>
+            <input type="checkbox" />
+            <div class="task-info">
+              <span class="time">10 января, 11:30</span>
+              <span class="title">Покормить кошку</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="task">
+          <label>
+            <input type="checkbox" />
+            <div class="task-info">
+              <span class="time">10 января, 11:30</span>
+              <span class="title">Покормить кошку</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <button class="floating-btn">
+        <span class="material-symbols-rounded">edit</span>
+      </button>
+    </div>
+
+    <div class="modal modal-unvisible">
+      <div class="modal-drag"></div>
+
+      <div class="modal-content">
+        <div class="input-group">
+          <input id="inputDescribeTask" type="text" placeholder="Описание" />
+        </div>
+
+        <div class="input-group">
+          <input
+            type="date"
+            id="datePicker"
+            name="trip-start"
+            value="2025-11-19"
+            min="2025-01-01"
+            max="2030-12-31"
+          />
+        </div>
+
+        <div class="toggle-row">
+          <span>Напомнить мне</span>
+
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button id="formAddBtn" class="btn add">Добавить</button>
+          <button id="formCancelBtn" class="btn cancel">Отмена</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
