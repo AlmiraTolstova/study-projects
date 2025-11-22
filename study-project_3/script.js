@@ -83,6 +83,20 @@ window.addEventListener("load", () => {
   dayWeek.textContent = listOfDays[new Date().getDay()];
   date.textContent =
     new Date().getDate() + " " + listOfMonths[new Date().getMonth()];
+  if (selectedView === "all") {
+    btnAll.querySelector(".material-symbols-outlined").textContent = "check";
+    btnActive.querySelector(".material-symbols-outlined").textContent = "";
+    btnDone.querySelector(".material-symbols-outlined").textContent = "";
+  } else if (selectedView === "active") {
+    btnAll.querySelector(".material-symbols-outlined").textContent = "";
+    btnActive.querySelector(".material-symbols-outlined").textContent = "check";
+    btnDone.querySelector(".material-symbols-outlined").textContent = "";
+  } else if (selectedView === "done") {
+    btnAll.querySelector(".material-symbols-outlined").textContent = "";
+    btnActive.querySelector(".material-symbols-outlined").textContent = "";
+    btnDone.querySelector(".material-symbols-outlined").textContent = "check";
+  }
+
   renderTasksList(tasks, listOfTasks, selectedView, selectedInputSearch);
 });
 
@@ -177,6 +191,10 @@ function renderTasksList(
     spanTitle.textContent = element.title;
     divTaskInfo.appendChild(spanTitle);
     elementLabel.appendChild(divTaskInfo);
+    const changeIcon = document.createElement("img");
+    changeIcon.src =
+      "icons/edit_square_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
+    elementLabel.appendChild(changeIcon);
 
     divTask.appendChild(elementLabel);
 
@@ -189,18 +207,46 @@ const btnAll = document.querySelector("#btnAll");
 const btnActive = document.querySelector("#btnActive");
 const btnDone = document.querySelector("#btnDone");
 
+function setActiveTab(button) {
+  // убираем active у всех
+  btnAll.classList.remove("active");
+  btnActive.classList.remove("active");
+  btnDone.classList.remove("active");
+
+  // добавляем только выбранной
+  button.classList.add("active");
+}
+
 btnAll.addEventListener("click", () => {
   selectedView = "all";
+  setActiveTab(btnAll);
+  // меняем иконки
+  btnAll.querySelector(".material-symbols-outlined").textContent = "check";
+  btnActive.querySelector(".material-symbols-outlined").textContent = "";
+  btnDone.querySelector(".material-symbols-outlined").textContent = "";
   renderTasksList(tasks, listOfTasks, selectedView, selectedInputSearch);
 });
 
 btnActive.addEventListener("click", () => {
   selectedView = "active";
+  setActiveTab(btnActive);
+  // меняем иконки
+  btnAll.querySelector(".material-symbols-outlined").textContent = "";
+  btnActive.querySelector(".material-symbols-outlined").textContent = "check";
+  btnDone.querySelector(".material-symbols-outlined").textContent = "";
+
+  // btnActive.classList.add("active");
   renderTasksList(tasks, listOfTasks, selectedView, selectedInputSearch);
 });
 
 btnDone.addEventListener("click", () => {
   selectedView = "done";
+  setActiveTab(btnDone);
+  // меняем иконки
+  btnAll.querySelector(".material-symbols-outlined").textContent = "";
+  btnActive.querySelector(".material-symbols-outlined").textContent = "";
+  btnDone.querySelector(".material-symbols-outlined").textContent = "check";
+
   renderTasksList(tasks, listOfTasks, selectedView, selectedInputSearch);
 });
 
@@ -211,6 +257,7 @@ const formAddBtn = document.querySelector("#formAddBtn");
 const formCancelBtn = document.querySelector("#formCancelBtn");
 const inputDescribeTask = document.querySelector("#inputDescribeTask");
 const datePicker = document.querySelector("#datePicker");
+const dateTimeInput = document.querySelector("#dateTimeInput");
 
 // Открыть модалку
 floatingBtn.addEventListener("click", () => {
@@ -220,18 +267,26 @@ floatingBtn.addEventListener("click", () => {
 // Добавление новой задачи
 formAddBtn.addEventListener("click", () => {
   const newInputDescribeTask = inputDescribeTask.value;
-  const newDatePicker = datePicker.value;
-  // Добавляем задачу в массив
-  tasks.push({
-    id: tasks.length + 1,
-    title: newInputDescribeTask,
-    data: newDatePicker,
-    completed: false,
-  });
-  updateStorage();
-
-  modalAddTask.classList.add("modal-unvisible");
-  renderTasksList(tasks, listOfTasks, selectedView, selectedInputSearch);
+  const newDatePicker = new Date(datePicker.value);
+  if (newDatePicker >= new Date()) {
+    // Добавляем задачу в массив
+    tasks.push({
+      id: tasks.length + 1,
+      title: newInputDescribeTask,
+      data: newDatePicker.toLocaleString(),
+      completed: false,
+    });
+    updateStorage();
+    modalAddTask.classList.add("modal-unvisible");
+    renderTasksList(tasks, listOfTasks, selectedView, selectedInputSearch);
+  } else {
+    if (dateTimeInput.childNodes.length === 3) {
+      const newWarning = document.createElement("p");
+      newWarning.innerText = "incorect date";
+      newWarning.style.color = "red";
+      dateTimeInput.appendChild(newWarning);
+    }
+  }
 });
 
 // Закрыть модалку

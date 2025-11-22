@@ -15,6 +15,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@300;400;500&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check"
+    />
   </head>
   <body>
     <div class="container">
@@ -28,9 +32,15 @@
       </div>
 
       <div class="tabs">
-        <button id="btnAll" class="active">✔ Все</button>
-        <button id="btnActive">Активные</button>
-        <button id="btnDone">Завершенные</button>
+        <button id="btnAll" class="active">
+          <span class="material-symbols-outlined"> </span>Все
+        </button>
+        <button id="btnActive">
+          <span class="material-symbols-outlined"> </span>Активные
+        </button>
+        <button id="btnDone">
+          <span class="material-symbols-outlined"> </span>Завершенные
+        </button>
       </div>
       <div class="tasks-list">
         <div class="task done">
@@ -40,6 +50,7 @@
               <span class="time">10 января, 11:30</span>
               <span class="title">Покормить кошку</span>
             </div>
+            <span class="material-symbols-outlined"> edit_square </span>
           </label>
         </div>
 
@@ -79,6 +90,8 @@
       </button>
     </div>
 
+    <!-- Add modal form -->
+
     <div class="modal modal-unvisible">
       <div class="modal-drag"></div>
 
@@ -87,14 +100,54 @@
           <input id="inputDescribeTask" type="text" placeholder="Описание" />
         </div>
 
-        <div class="input-group">
+        <div class="input-group" id="dateTimeInput">
           <input
-            type="date"
+            type="datetime-local"
             id="datePicker"
             name="trip-start"
-            value="2025-11-19"
-            min="2025-01-01"
-            max="2030-12-31"
+            value="2025-11-19T19:30"
+            min="2025-01-01T00:00"
+            max="2030-12-31T00:00"
+          />
+        </div>
+
+        <div class="toggle-row">
+          <span>Напомнить мне</span>
+          <img
+            src="icons/edit_square_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+            alt=""
+          />
+
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button id="formAddBtn" class="btn add">Добавить</button>
+          <button id="formCancelBtn" class="btn cancel">Отмена</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Change modal form -->
+    <div class="modal modal-unvisible">
+      <div class="modal-drag"></div>
+
+      <div class="modal-content">
+        <div class="input-group">
+          <input id="inputDescribeTask" type="text" placeholder="Описание" />
+        </div>
+
+        <div class="input-group" id="dateTimeInput">
+          <input
+            type="datetime-local"
+            id="datePicker"
+            name="trip-start"
+            value="2025-11-19T19:30"
+            min="2025-01-01T00:00"
+            max="2030-12-31T00:00"
           />
         </div>
 
@@ -108,8 +161,9 @@
         </div>
 
         <div class="buttons">
-          <button id="formAddBtn" class="btn add">Добавить</button>
+          <button id="formAddBtn" class="btn add">Изменить</button>
           <button id="formCancelBtn" class="btn cancel">Отмена</button>
+          <button id="formRemoveBtn" class="btn remove">Удалить</button>
         </div>
       </div>
     </div>
