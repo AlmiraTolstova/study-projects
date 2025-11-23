@@ -116,15 +116,20 @@ body {
   /* background: #f3ecff; */
   background: rgba(103, 80, 164, 0.0509804);
   border-radius: 16px;
-  padding: 8px 12px 8px 8px;
+  padding: 8px 24px 8px 24px;
   gap: 8px;
   margin-bottom: 12px;
   height: 62px;
 }
 
+.task-container {
+  display: flex;
+  justify-content: space-between;
+}
 .task.done {
   background: rgba(103, 80, 164, 0.0509804);
   opacity: 0.6;
+  text-decoration: line-through;
 }
 
 .task label {
@@ -140,11 +145,14 @@ body {
   width: 20px;
   height: 20px;
   accent-color: #d0bcff;
+  display: block;
+  align-self: center;
 }
 
 .task-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .time {
@@ -165,10 +173,10 @@ body {
   color: #1d1b1e;
 }
 
-.done-text {
+/* .done-text {
   text-decoration: line-through;
   background: rgba(103, 80, 164, 0.0509804);
-}
+} */
 
 .floating-btn {
   width: 58px;

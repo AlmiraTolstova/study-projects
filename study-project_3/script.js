@@ -71,6 +71,26 @@ const listOfMonths = [
   "Декабрь",
 ];
 
+function parseCustomDate(str) {
+  const [datePart, timePart] = str.split(", ");
+  const [day, month, year] = datePart.split(".").map(Number);
+  const [hours, minutes, seconds = 0] = timePart.split(":").map(Number);
+
+  return new Date(year, month - 1, day, hours, minutes, seconds);
+}
+function toInputDateFormat(str) {
+  const date = parseCustomDate(str);
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+
+  return `${year}-${month}-${day}T${hours}:${minutes}`;
+}
+
 // Загружаем задачи из localStorage
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -115,6 +135,17 @@ function renderTasksList(
   // Фильтрация по вкладкам
   if (filterValue === "all") {
     filteredArr = arr;
+    filteredArr.forEach((element) => {
+      if (element.completed) {
+        // переносим задачу в конец
+        filteredArr = filteredArr.filter((t) => t.id !== element.id);
+        filteredArr.push(element);
+      } else {
+        // переносим в начало (если нужно вернуть наверх)
+        filteredArr = filteredArr.filter((t) => t.id !== element.id);
+        filteredArr.unshift(element);
+      }
+    });
   } else if (filterValue === "active") {
     filteredArr = arr.filter((elem) => {
       return elem.completed === false;
@@ -130,6 +161,7 @@ function renderTasksList(
       return elem.title.includes(inputFilterSearch);
     });
   }
+
   // Рисуем каждый элемент
   filteredArr.forEach((element) => {
     const divTask = document.createElement("div");
@@ -140,7 +172,8 @@ function renderTasksList(
       divTask.classList.add("done");
     }
 
-    const elementLabel = document.createElement("label");
+    const elementLabel = document.createElement("div");
+    elementLabel.classList.add("task-container");
 
     // Checkbox выполнения задачи
     const chekboxDone = document.createElement("input");
@@ -155,16 +188,6 @@ function renderTasksList(
         spanTitle.classList.add("done-text");
       } else {
         spanTitle.classList.remove("done-text");
-      }
-
-      if (element.completed) {
-        // переносим задачу в конец
-        tasks = tasks.filter((t) => t.id !== element.id);
-        tasks.push(element);
-      } else {
-        // переносим в начало (если нужно вернуть наверх)
-        tasks = tasks.filter((t) => t.id !== element.id);
-        tasks.unshift(element);
       }
 
       // Сохраняем новые данные в localStorage
@@ -191,9 +214,19 @@ function renderTasksList(
     spanTitle.textContent = element.title;
     divTaskInfo.appendChild(spanTitle);
     elementLabel.appendChild(divTaskInfo);
+    // Кнопка изменить задачу
     const changeIcon = document.createElement("img");
     changeIcon.src =
       "icons/edit_square_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
+
+    //Обработчик кнопки редактирования
+    changeIcon.addEventListener("click", () => {
+      taskToEdit = element;
+      inputChangeDescribeTask.value = element.title;
+      dateChangeTimeInput.value = toInputDateFormat(element.data);
+
+      changeModalForm.classList.remove("modal-unvisible");
+    });
     elementLabel.appendChild(changeIcon);
 
     divTask.appendChild(elementLabel);
@@ -305,4 +338,52 @@ const searchInput = document.querySelector("#search");
 searchInput.addEventListener("input", () => {
   selectedInputSearch = searchInput.value;
   renderTasksList(tasks, listOfTasks, selectedView, selectedInputSearch);
+});
+
+// Модальное окно редактирования задачи
+const changeModalForm = document.querySelector("#changeModalForm");
+const formChangeCancelBtn = document.querySelector("#formChangeCancelBtn");
+const formChangeAddBtn = document.querySelector("#formChangeAddBtn");
+const formChangeRemoveBtn = document.querySelector("#formChangeRemoveBtn");
+const inputChangeDescribeTask = document.querySelector(
+  "#inputChangeDescribeTask"
+);
+const dateChangeTimeInput = document.querySelector("#ChangeDatePicker");
+
+let taskToEdit = null;
+
+formChangeRemoveBtn.addEventListener("click", () => {
+  if (!taskToEdit) return;
+
+  tasks = tasks.filter((t) => t.id !== taskToEdit.id);
+
+  updateStorage();
+
+  renderTasksList(tasks, listOfTasks, selectedView, selectedInputSearch);
+
+  changeModalForm.classList.add("modal-unvisible");
+
+  taskToEdit = null;
+});
+
+formChangeAddBtn.addEventListener("click", () => {
+  if (!taskToEdit) return;
+
+  // Обновляем заголовок
+  taskToEdit.title = inputChangeDescribeTask.value;
+
+  // Обновляем дату
+  const newDate = new Date(dateChangeTimeInput.value);
+  taskToEdit.data = newDate.toLocaleString();
+
+  updateStorage();
+
+  // Перерисовываем список
+  renderTasksList(tasks, listOfTasks, selectedView, selectedInputSearch);
+
+  // Закрываем модалку
+  changeModalForm.classList.add("modal-unvisible");
+
+  // Сбрасываем
+  taskToEdit = null;
 });

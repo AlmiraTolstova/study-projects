@@ -132,18 +132,22 @@
     </div>
 
     <!-- Change modal form -->
-    <div class="modal modal-unvisible">
+    <div id="changeModalForm" class="modal modal-unvisible">
       <div class="modal-drag"></div>
 
       <div class="modal-content">
         <div class="input-group">
-          <input id="inputDescribeTask" type="text" placeholder="Описание" />
+          <input
+            id="inputChangeDescribeTask"
+            type="text"
+            placeholder="Описание"
+          />
         </div>
 
-        <div class="input-group" id="dateTimeInput">
+        <div class="input-group" id="dateChangeTimeInput">
           <input
             type="datetime-local"
-            id="datePicker"
+            id="ChangeDatePicker"
             name="trip-start"
             value="2025-11-19T19:30"
             min="2025-01-01T00:00"
@@ -161,9 +165,9 @@
         </div>
 
         <div class="buttons">
-          <button id="formAddBtn" class="btn add">Изменить</button>
-          <button id="formCancelBtn" class="btn cancel">Отмена</button>
-          <button id="formRemoveBtn" class="btn remove">Удалить</button>
+          <button id="formChangeAddBtn" class="btn add">Изменить</button>
+          <button id="formChangeCancelBtn" class="btn cancel">Отмена</button>
+          <button id="formChangeRemoveBtn" class="btn remove">Удалить</button>
         </div>
       </div>
     </div>
