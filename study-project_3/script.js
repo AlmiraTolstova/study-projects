@@ -227,6 +227,7 @@ function renderTasksList(
 
       changeModalForm.classList.remove("modal-unvisible");
     });
+
     elementLabel.appendChild(changeIcon);
 
     divTask.appendChild(elementLabel);
@@ -385,5 +386,11 @@ formChangeAddBtn.addEventListener("click", () => {
   changeModalForm.classList.add("modal-unvisible");
 
   // Сбрасываем
+  taskToEdit = null;
+});
+
+// Кнопка Отмена
+formChangeCancelBtn.addEventListener("click", () => {
+  changeModalForm.classList.add("modal-unvisible");
   taskToEdit = null;
 });
