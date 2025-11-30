@@ -79,109 +79,93 @@
         </div>
 
         <div class="task">
-          <label>
-            <input type="checkbox" />
-            <div class="task-info">
-              <span class="time">10 января, 11:30</span>
-              <span class="title">Покормить кошку</span>
-            </div>
-          </label>
-        </div>
-
-        <div class="task">
-          <label>
-            <input type="checkbox" />
-            <div class="task-info">
-              <span class="time">10 января, 11:30</span>
-              <span class="title">Покормить кошку</span>
-            </div>
-          </label>
+          <h3></h3>
+          <p class="name"></p>
+          <p class="post-body"></p>
+          <p></p>
+          <button>Читать далее</button>
         </div>
       </div>
 
-      <button class="floating-btn">
-        <span class="material-symbols-rounded">edit</span>
-      </button>
-    </div>
+      <!-- Add modal form -->
 
-    <!-- Add modal form -->
+      <div class="modal modal-unvisible">
+        <div class="modal-drag"></div>
 
-    <div class="modal modal-unvisible">
-      <div class="modal-drag"></div>
+        <div class="modal-content">
+          <div class="input-group">
+            <input id="inputDescribeTask" type="text" placeholder="Описание" />
+          </div>
 
-      <div class="modal-content">
-        <div class="input-group">
-          <input id="inputDescribeTask" type="text" placeholder="Описание" />
-        </div>
+          <div class="input-group" id="dateTimeInput">
+            <input
+              type="datetime-local"
+              id="datePicker"
+              name="trip-start"
+              value="2025-11-19T19:30"
+              min="2025-01-01T00:00"
+              max="2030-12-31T00:00"
+            />
+          </div>
 
-        <div class="input-group" id="dateTimeInput">
-          <input
-            type="datetime-local"
-            id="datePicker"
-            name="trip-start"
-            value="2025-11-19T19:30"
-            min="2025-01-01T00:00"
-            max="2030-12-31T00:00"
-          />
-        </div>
+          <div class="toggle-row">
+            <span>Напомнить мне</span>
+            <img
+              src="icons/edit_square_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+              alt=""
+            />
 
-        <div class="toggle-row">
-          <span>Напомнить мне</span>
-          <img
-            src="icons/edit_square_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-            alt=""
-          />
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
 
-          <label class="switch">
-            <input type="checkbox" checked />
-            <span class="slider"></span>
-          </label>
-        </div>
-
-        <div class="buttons">
-          <button id="formAddBtn" class="btn add">Добавить</button>
-          <button id="formCancelBtn" class="btn cancel">Отмена</button>
+          <div class="buttons">
+            <button id="formAddBtn" class="btn add">Добавить</button>
+            <button id="formCancelBtn" class="btn cancel">Отмена</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Change modal form -->
-    <div id="changeModalForm" class="modal modal-unvisible">
-      <div class="modal-drag"></div>
+      <!-- Change modal form -->
+      <div id="changeModalForm" class="modal modal-unvisible">
+        <div class="modal-drag"></div>
 
-      <div class="modal-content">
-        <div class="input-group">
-          <input
-            id="inputChangeDescribeTask"
-            type="text"
-            placeholder="Описание"
-          />
-        </div>
+        <div class="modal-content">
+          <div class="input-group">
+            <input
+              id="inputChangeDescribeTask"
+              type="text"
+              placeholder="Описание"
+            />
+          </div>
 
-        <div class="input-group" id="dateChangeTimeInput">
-          <input
-            type="datetime-local"
-            id="ChangeDatePicker"
-            name="trip-start"
-            value="2025-11-19T19:30"
-            min="2025-01-01T00:00"
-            max="2030-12-31T00:00"
-          />
-        </div>
+          <div class="input-group" id="dateChangeTimeInput">
+            <input
+              type="datetime-local"
+              id="ChangeDatePicker"
+              name="trip-start"
+              value="2025-11-19T19:30"
+              min="2025-01-01T00:00"
+              max="2030-12-31T00:00"
+            />
+          </div>
 
-        <div class="toggle-row">
-          <span>Напомнить мне</span>
+          <div class="toggle-row">
+            <span>Напомнить мне</span>
 
-          <label class="switch">
-            <input type="checkbox" checked />
-            <span class="slider"></span>
-          </label>
-        </div>
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
 
-        <div class="buttons">
-          <button id="formChangeAddBtn" class="btn add">Изменить</button>
-          <button id="formChangeCancelBtn" class="btn cancel">Отмена</button>
-          <button id="formChangeRemoveBtn" class="btn remove">Удалить</button>
+          <div class="buttons">
+            <button id="formChangeAddBtn" class="btn add">Изменить</button>
+            <button id="formChangeCancelBtn" class="btn cancel">Отмена</button>
+            <button id="formChangeRemoveBtn" class="btn remove">Удалить</button>
+          </div>
         </div>
       </div>
     </div>
