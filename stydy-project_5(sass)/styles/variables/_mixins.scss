@@ -1,0 +1,31 @@
+@use "./typography";
+@use "./colors";
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font($weight: 400, $size: 16px, $line: 19px, $color: $font-color) {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
+  color: $color;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin button-style($bg, $color, $border: none) {
+  background: $bg;
+  color: $color;
+  border: $border;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 12px 26px;
+}

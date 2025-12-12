@@ -6,6 +6,7 @@ const URL_COMMENTS = `${URL_BASE}/comments`;
 let listPosts = [];
 let listUsers = [];
 let listComments = [];
+let selectedUserIdForFilter = "all";
 
 let ListPostsWithComments = [];
 
@@ -53,6 +54,7 @@ function mergeData(posts, users, comments) {
     resultArray.push({
       postTitle: post.title,
       userName: currentUser[0].name,
+      userId: currentUser[0].id,
       postBody: post.body,
       commentsCount: currentComments.length,
       postComments: currentComments,
@@ -63,8 +65,11 @@ function mergeData(posts, users, comments) {
 
 const listOfTasks = document.querySelector(".tasks-list");
 
-function renderPosts(arr, container) {
-  arr.forEach((element) => {
+function renderPosts(arr, container, selectedUserFilter) {
+  container.innerHTML = "";
+  const flteredArr = useCombainFilter(arr, selectedUserFilter);
+
+  flteredArr.forEach((element) => {
     const postCardDiv = document.createElement("div");
     postCardDiv.innerHTML = `
         <h3>${element.postTitle}</h3>
@@ -73,15 +78,45 @@ function renderPosts(arr, container) {
           <p>Количество комментариев к этому посту: ${element.commentsCount}</p>
           <button>Читать далее</button>
     `;
-    console.log(element);
     container.appendChild(postCardDiv);
   });
 }
+
+function useCombainFilter(mergedData, selectedUserFilter) {
+  let filteredArr = [];
+
+  if (selectedUserFilter !== "all") {
+    if (selectedUserFilter !== "") {
+      filteredArr = mergedData.filter((elem) => {
+        return elem.userId === Number(selectedUserFilter);
+      });
+      return filteredArr;
+    }
+  } else return mergedData;
+}
+
+const userFilter = document.querySelector("#userFilter");
+// Фильтр по пользователю
+function makeUsersfilter(users, selectusers) {
+  users.forEach((item) => {
+    const opt1 = document.createElement("option");
+
+    opt1.value = item.id;
+    opt1.text = item.name;
+    selectusers.add(opt1);
+  });
+}
+
+userFilter.addEventListener("change", (event) => {
+  selectedUserIdForFilter = event.target.value;
+  renderPosts(ListPostsWithComments, listOfTasks, selectedUserIdForFilter);
+});
 
 window.addEventListener("load", async () => {
   listPosts = await getPosts();
   listUsers = await getUsers();
   listComments = await getCommets();
+  makeUsersfilter(listUsers, userFilter);
   ListPostsWithComments = mergeData(listPosts, listUsers, listComments);
-  renderPosts(ListPostsWithComments, listOfTasks);
+  renderPosts(ListPostsWithComments, listOfTasks, selectedUserIdForFilter);
 });
