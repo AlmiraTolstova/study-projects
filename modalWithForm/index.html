@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal with Form</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <button class="openModalBtn">Зарегистрироваться</button>
+    <div class="modal modalHidden">
+      <div class="modalBody">
+        <button class="closeModalBtn" aria-label="Close modal">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <h2>Регистрация</h2>
+
+        <form>
+          <input type="text" placeholder="Имя" />
+          <input type="email" placeholder="Email" />
+
+          <div class="modalActions">
+            <button type="submit">Отправить</button>
+            <button type="button" class="cancelBtn">Отмена</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+</html>
