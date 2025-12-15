@@ -75,3 +75,10 @@ input {
   padding: 8px 14px;
   cursor: pointer;
 }
+
+.checkbox {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  align-items: center;
+}

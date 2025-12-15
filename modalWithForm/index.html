@@ -19,12 +19,51 @@
         </button>
         <h2>Регистрация</h2>
 
-        <form>
-          <input type="text" placeholder="Имя" />
-          <input type="email" placeholder="Email" />
+        <form id="registerForm">
+          <input
+            type="text"
+            name="username"
+            placeholder="Имя пользователя"
+            required
+          />
+
+          <input type="email" name="email" placeholder="Email" required />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Пароль (мин. 6 символов)"
+            minlength="6"
+            required
+          />
+
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Подтвердите пароль"
+            required
+          />
+
+          <input type="text" name="firstName" placeholder="Имя" required />
+
+          <input type="text" name="lastName" placeholder="Фамилия" required />
+
+          <input
+            type="number"
+            name="age"
+            placeholder="Возраст"
+            min="18"
+            max="100"
+            required
+          />
+
+          <label class="checkbox">
+            <input type="checkbox" id="terms" />
+            Я согласен с условиями использования
+          </label>
 
           <div class="modalActions">
-            <button type="submit">Отправить</button>
+            <button type="submit">Зарегистрироваться</button>
             <button type="button" class="cancelBtn">Отмена</button>
           </div>
         </form>
