@@ -18,7 +18,7 @@
           <i class="bi bi-x-lg"></i>
         </button>
         <h2>Регистрация</h2>
-
+        <p class="serverMessage"></p>
         <form id="registerForm">
           <input
             type="text"
@@ -26,8 +26,10 @@
             placeholder="Имя пользователя"
             required
           />
+          <span class="error"></span>
 
           <input type="email" name="email" placeholder="Email" required />
+          <span class="error"></span>
 
           <input
             type="password"
@@ -36,6 +38,7 @@
             minlength="6"
             required
           />
+          <span class="error"></span>
 
           <input
             type="password"
@@ -43,10 +46,13 @@
             placeholder="Подтвердите пароль"
             required
           />
+          <span class="error"></span>
 
           <input type="text" name="firstName" placeholder="Имя" required />
+          <span class="error"></span>
 
           <input type="text" name="lastName" placeholder="Фамилия" required />
+          <span class="error"></span>
 
           <input
             type="number"
@@ -56,20 +62,30 @@
             max="100"
             required
           />
+          <span class="error"></span>
 
           <label class="checkbox">
             <input type="checkbox" id="terms" />
             Я согласен с условиями использования
           </label>
+          <span class="error"></span>
 
           <div class="modalActions">
-            <button type="submit">Зарегистрироваться</button>
+            <button type="submit" class="submitBtn" disabled>
+              Зарегистрироваться
+              <!-- <span class="btnText">Зарегистрироваться</span> -->
+            </button>
+
+            <!-- <button type="submit">Зарегистрироваться</button> -->
             <button type="button" class="cancelBtn">Отмена</button>
           </div>
         </form>
       </div>
     </div>
+    <!-- overlay loader -->
+    <div class="loaderOverlay hidden">
+      <span class="loader"></span>
+    </div>
+    <script src="script.js"></script>
   </body>
-
-  <script src="script.js"></script>
 </html>
