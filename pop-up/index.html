@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>СОЗДАНИЕ ВСПЛЫВАЮЩИХ УВЕДОМЛЕНИЙ</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <form action="">
+      Создание заказа
+      <input type="text" placeholder="Адрес" required />
+      <input type="text" placeholder="Цена" required />
+      <input type="text" placeholder="Получатель" required />
+      <button type="submit">Создать</button>
+    </form>
+    <div class="buttons buttons--hidden" id="buttons">
+      <button id="buttonPaid">Заказ оплачен</button>
+      <button id="buttonSent">Заказ отправлен</button>
+      <button id="buttonGet">Заказ получен</button>
+    </div>
+    <div class="notifications-container" id="notificationsContainer"></div>
+  </body>
+  <script src="script.js"></script>
+</html>
