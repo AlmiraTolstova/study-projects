@@ -4,7 +4,290 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(119, 120, 120);
+}
 .card {
   width: 500px;
   border: 1px solid rebeccapurple;
+}
+
+.loader {
+  justify-self: center;
+  display: flex;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
+}
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #ffffff,
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7),
+      1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff,
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff,
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.5),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff,
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff,
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff,
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.modalResultEmpty {
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 300px;
+}
+
+.modalError {
+  background-color: red;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 32px;
+  background: #d8d5d2;
+}
+
+.menu-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* SEARCH */
+.search input {
+  padding: 8px 36px 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: url("https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/search.svg")
+    no-repeat right 12px center;
+  background-size: 16px;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.subscribe {
+  background: #ff3b6a;
+  color: #fff;
+  border: none;
+}
+
+.sign-in {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 240px;
+  background: #212529;
+  color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 3;
+}
+
+.side-menu.active {
+  transform: translateX(0);
+}
+
+.side-menu ul {
+  background-color: rgb(36, 63, 63);
+  list-style: none;
+  /* padding: 60px 0; */
+  padding-bottom: 200px;
+}
+
+.side-menu li {
+  padding: 14px 20px;
+}
+
+.side-menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.side-menu li:hover {
+  background: #ff3b6a;
+}
+
+.side-menu li {
+  padding: 14px 20px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.side-menu li:hover a {
+  color: #fff;
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Скрытые подпункты */
+/* Основные пункты меню */
+.menu-list {
+  list-style: none;
+  padding: 60px 0;
+}
+
+/* Главная ссылка */
+.main-link {
+  display: block;
+  padding: 14px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.main-link:hover {
+  background: #ff3b6a;
+}
+
+/* Скрытые подпункты */
+.sub-links {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 20px;
+}
+
+/* Подпункты */
+.sub-links li a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.sub-links li a:hover {
+  background: #ff3b6a;
+  color: #fff;
+}
+
+.close {
+  display: none;
 }
