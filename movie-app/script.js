@@ -2,6 +2,9 @@ const BASE_URL = "http://www.omdbapi.com/";
 
 const API_KEY = "apikey=4bd1180e";
 
+// Загружаем задачи из localStorage
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
 async function searchFilms(searchInput) {
   try {
     const response = await fetch(`${BASE_URL}?s=${searchInput}&${API_KEY}`);
@@ -55,6 +58,11 @@ function renderModalResultError() {
 }
 let commonServerError = false;
 let filmsList = [];
+
+window.addEventListener("load", () => {
+  updateCounter(favorites.length);
+});
+
 searchBtn.addEventListener("click", async () => {
   commonServerError = false;
   mainContainer.innerHTML = "";
@@ -122,6 +130,12 @@ async function renderFilmCards(arr) {
       //-----------addToFavoritesBtn------//
       const addToFavoritesBtn = document.createElement("button");
       addToFavoritesBtn.textContent = "Добавить в избранное";
+      addToFavoritesBtn.addEventListener("click", () => {
+        favorites.push(element);
+        updateStorage();
+        updateCounter(favorites.length);
+      });
+
       cardDiv.appendChild(addToFavoritesBtn);
 
       mainContainer.appendChild(cardDiv);
@@ -166,3 +180,14 @@ menuItems.forEach((item) => {
     item.querySelector(".sub-links").classList.toggle("close");
   });
 });
+
+// Favorites
+
+// Функция обновления localStorage
+function updateStorage() {
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+// Функция обновления отображения счетчика
+function updateCounter(counter = 0) {
+  document.querySelector("#favoriteCounter").textContent = counter;
+}

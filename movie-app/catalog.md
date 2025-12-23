@@ -2,9 +2,9 @@
 
 Основной интерфейс:
 
-Шапка с поиском:
-Поле ввода для поиска фильмов по названию
-Кнопка "Найти"
+x - Шапка с поиском:
+x - Поле ввода для поиска фильмов по названию
+x - Кнопка "Найти"
 Ссылка "Избранное" (счетчик)
 
 Боковая панель фильтров:
@@ -18,7 +18,7 @@
 Счетчик найденных фильмов: "Найдено 24 фильма"
 Кнопка "Показать еще" (подгрузка следующих фильмов) \*\*
 
-Каждая карточка содержит:
+x - Каждая карточка содержит:
 Постер фильма (изображение)
 Название фильма
 Год выпуска
@@ -45,29 +45,16 @@
 Возможность удалить из избранного
 Сохранение в LocalStorage
 
-Используйте OMDb API (The Open Movie Database):
+x - Используйте OMDb API (The Open Movie Database):
 Бесплатный ключ: можно получить на omdbapi.com (1000 запросов в день)
 Поиск фильма: http://www.omdbapi.com/?s=avatar&apikey=ваш_ключ
 Детали фильма: http://www.omdbapi.com/?i=tt0499549&apikey=ваш_ключ
 
 Состояния интерфейса:
-Загрузка: показывает спиннер при поиске
-Пустой результат: "Фильмы не найдены, попробуйте изменить запрос"
-Ошибка: "Произошла ошибка при загрузке данных"
+x - Загрузка: показывает спиннер при поиске
+x - Пустой результат: "Фильмы не найдены, попробуйте изменить запрос"
+x - Ошибка: "Произошла ошибка при загрузке данных"
 Пустое избранное: "Вы еще не добавили ни одного фильма в избранное"
-
-Пример данных фильма:
-{
-"Title": "Inception",
-"Year": "2010",
-"Genre": "Action, Adventure, Sci-Fi",
-"Director": "Christopher Nolan",
-"Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
-"Plot": "A thief who steals corporate secrets...",
-"Poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-"imdbRating": "8.8",
-"Runtime": "148 min"
-}
 
 Дополнительные возможности:
 Сортировка: по году, рейтингу, названию
@@ -75,6 +62,19 @@
 Тёмная тема
 Экспорт избранного в JSON
 Случайный фильм (кнопка "Мне повезет!")
+
+    Пример данных фильма:
+    {
+    "Title": "Inception",
+    "Year": "2010",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "Christopher Nolan",
+    "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
+    "Plot": "A thief who steals corporate secrets...",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+    "imdbRating": "8.8",
+    "Runtime": "148 min"
+    }
 
 {
 "Title": "Bundles Lorem Ipsum",
