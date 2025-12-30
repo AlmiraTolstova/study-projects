@@ -11,52 +11,41 @@
     />
   </head>
   <body>
-    <!-- <header>
-      <input type="search" id="searchInput" />
-      <button id="searchBtn">Найти</button>
-      <a href="">Избранное</a>
-    </header> -->
     <header class="header">
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-        <i class="bi bi-list"></i>
-      </button>
+      <div class="container header-container">
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          <i class="bi bi-list"></i>
+        </button>
 
-      <div class="logo">
-        <span>Moovie</span>
+        <div class="logo">
+          <span>Moovie</span>
+        </div>
+
+        <div class="search">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="What do you want to watch?"
+          />
+        </div>
+
+        <button id="searchBtn" class="btn subscribe">Найти</button>
+        <button id="favoritesBtn" class="btn sign-in">
+          <i class="bi bi-heart"></i> Избранное
+          <span id="favoriteCounter"></span>
+        </button>
+        <span id="filmCounter"></span>
+        <button id="filterBtn" class="btn sign-in">
+          <i class="bi bi-filter-circle"></i
+          ><span id="spanFilterBtn">Filter</span>
+        </button>
       </div>
-
-      <div class="search">
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="What do you want to watch?"
-        />
-      </div>
-
-      <button id="searchBtn" class="btn subscribe">Найти</button>
-      <button class="btn sign-in">
-        <i class="bi bi-heart"></i> Избранное <span id="favoriteCounter"></span>
-      </button>
     </header>
 
     <main>
       <div class="overlay" id="overlay"></div>
 
-      <div class="main-container">
-        <div class="card">
-          <img src="" alt="" />
-          <h2 class="card-title">Title</h2>
-          <p class="card-year">Year</p>
-          <p>Genre</p>
-          <p>Ratings</p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores,
-            molestias!
-          </p>
-          <button>Подробнее</button>
-          <button>Добавить в избранное</button>
-        </div>
-      </div>
+      <div class="main-container container"></div>
       <span class="loader hidden"></span>
 
       <nav class="side-menu" id="sideMenu">
@@ -66,32 +55,153 @@
 
         <ul class="menu-list">
           <li class="menu-item">
-            <a href="#" class="main-link">Element 1</a>
-            <ul class="sub-links close">
-              <li><a href="#">Sub 1.1</a></li>
-              <li><a href="#">Sub 1.2</a></li>
-              <li><a href="#">Sub 1.3</a></li>
-            </ul>
+            <fieldset id="filterFieldSet">
+              <legend>Фильтр по жанрам:</legend>
+
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxAction"
+                  name="scales"
+                  value="Action"
+                />
+                <label for="checkBoxAction">Action</label>
+              </div>
+
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxAdventure"
+                  name="horns"
+                  value="Adventure"
+                />
+                <label for="checkBoxAdventure">Adventure</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxFantasy"
+                  name="horns"
+                  value="Fantasy"
+                />
+                <label for="checkBoxFantasy">Fantasy</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxHorror"
+                  name="horns"
+                  value="Horror"
+                />
+                <label for="checkBoxHorror">Horror</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxSciFi"
+                  name="horns"
+                  value="Sci-Fi"
+                />
+                <label for="checkBoxSciFi">Sci-Fi</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxAnimation"
+                  name="horns"
+                  value="Animation"
+                />
+                <label for="checkBoxAnimation">Animation</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxDrama"
+                  name="horns"
+                  value="Drama"
+                />
+                <label for="checkBoxDrama">Drama</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxComedy"
+                  name="horns"
+                  value="Comedy"
+                />
+                <label for="checkBoxComedy">Comedy</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxCrime"
+                  name="horns"
+                  value="Crime"
+                />
+                <label for="checkBoxCrime">Crime</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkBoxSport"
+                  name="horns"
+                  value="Sport"
+                />
+                <label for="checkBoxSport">Sport</label>
+              </div>
+            </fieldset>
           </li>
 
           <li class="menu-item">
-            <a href="#" class="main-link">Element 2</a>
-            <ul class="sub-links close">
-              <li><a href="#">Sub 2.1</a></li>
-              <li><a href="#">Sub 2.2</a></li>
-              <li><a href="#">Sub 2.3</a></li>
-            </ul>
+            <label for="">Von</label>
+            <input
+              type="number"
+              id="yearFromFilter"
+              value="1900"
+              min="1900"
+              max="2030"
+            />
+            <label for="">Bis</label>
+            <input
+              type="number"
+              id="yearToFilter"
+              value="2020"
+              min="1900"
+              max="2030"
+            />
           </li>
 
           <li class="menu-item">
-            <a href="#" class="main-link">Element 3</a>
-            <ul class="sub-links close">
-              <li><a href="#">Sub 3.1</a></li>
-              <li><a href="#">Sub 3.2</a></li>
-            </ul>
+            <div>
+              <input
+                type="range"
+                id="ratingFilter"
+                name="Rating"
+                min="0"
+                max="10"
+                step="1"
+              />
+              <label for="volume">Volume</label>
+              <p>Value: <output id="ratingFilterValue"></output></p>
+            </div>
           </li>
+          <button id="filterRun">Find</button>
+          <button id="filterReset">Reset filters</button>
         </ul>
       </nav>
+
+      <div id="modalDetailsCardFilm">
+        <!-- <div class="modal">
+        <div class="modalBody">
+          <button class="closeModalBtn" aria-label="Close modal">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          Lorem ipsum dolor sit amet, consectetur adipisicing. Lorem ipsum dolor
+          sit amet, consectetur adipisicing. Lorem ipsum dolor sit amet,
+          consectetur adipisicing.
+        </div>
+        </div> -->
+      </div>
     </main>
   </body>
   <script src="script.js"></script>
