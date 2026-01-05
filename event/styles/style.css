@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* HEADER */
+header {
+  background-color: #ffff;
+}
+.header-container {
+  width: 94.5rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6875rem 0.6875rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #d9d9d9; */
+  /* border-radius: 8px; */
+  overflow: hidden;
+  height: 2.625rem;
+}
+
+.search input {
+  /* border: none; */
+  outline: none;
+  /* font-style: normal; */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.1875rem;
+  color: #707070;
+}
+
+.search input:first-child {
+  padding-left: 2.125rem;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2222%22%20viewBox%3D%220%200%2022%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M15.125%209.625C15.125%2012.6626%2012.6626%2015.125%209.625%2015.125C6.58743%2015.125%204.125%2012.6626%204.125%209.625C4.125%206.58743%206.58743%204.125%209.625%204.125C12.6626%204.125%2015.125%206.58743%2015.125%209.625ZM16.5%209.625C16.5%2013.4219%2013.4219%2016.5%209.625%2016.5C5.82804%2016.5%202.75%2013.4219%202.75%209.625C2.75%205.82804%205.82804%202.75%209.625%202.75C13.4219%202.75%2016.5%205.82804%2016.5%209.625ZM15.0972%2016.0694L14.6271%2015.5993C14.979%2015.3044%2015.3044%2014.979%2015.5993%2014.6271L16.0694%2015.0972L18.8194%2017.8472C19.0879%2018.1157%2019.0879%2018.551%2018.8194%2018.8194C18.551%2019.0879%2018.1157%2019.0879%2017.8472%2018.8194L15.0972%2016.0694Z%22%20fill%3D%22%23707070%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 18px;
+}
+
+.search-text {
+  border: 1px solid #d9d9d9;
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+  height: 2.625rem;
+}
+.search .location {
+  height: 2.625rem;
+  border-left: none;
+  min-width: 12.5rem;
+  padding-left: 1.0625rem;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  border-right: none;
+}
+
+.search-btn {
+  background: #f65858;
+  border: none;
+  height: 2.625rem;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+  padding: 0 0.6875rem;
+  cursor: pointer;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.3125rem;
+}
+
+.right a {
+  text-decoration: none;
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.welt-icon {
+  width: 20px;
+  height: 20px;
+  fill: #212121;
+  margin-right: 6px;
+}
+
+.header-language {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+}
+
+.btn-main {
+  border: none;
+  background: #008294;
+  color: #ffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.25rem;
+}
+.btn-outline {
+  border: none;
+  color: #212121;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.25rem;
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .search {
+    display: none;
+  }
+}
