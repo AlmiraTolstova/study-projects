@@ -112,7 +112,7 @@ header {
   font-size: 14px;
   line-height: 1.25rem;
 }
-.btn-outline {
+.btn-link {
   border: none;
   color: #212121;
   padding: 0.5rem 1rem;
@@ -123,6 +123,22 @@ header {
   font-size: 14px;
   line-height: 1.25rem;
   background: none;
+}
+.btn-outline {
+  border: 2px solid #ffffff;
+  color: #212121;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+
+  background: none;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
 }
 
 /* @media (max-width: 768px) {
@@ -181,4 +197,104 @@ main {
   line-height: 24px;
   color: #212121;
   margin-bottom: 24px;
+}
+@media (max-width: 396px) {
+  .container {
+    width: 364px;
+    /* margin-left: 14px;
+    margin-right: 14px; */
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+  .main-container {
+    flex-direction: column;
+  }
+}
+
+/* FOOTER */
+footer {
+  background: #212121;
+}
+.footer-top {
+  padding-top: 24px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  border-bottom: 1px solid #707070;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.footer-top h5 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #f6f7f8;
+}
+.footer-content {
+  display: flex;
+  padding-bottom: 40px;
+}
+.footer-col a {
+  width: 343px;
+  color: #c5c4c4;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+.footer-col h6 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #f6f7f8;
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #f6f7f8;
+  margin-bottom: 12px;
+}
+.footer-icons {
+  display: flex;
+  gap: 32px;
+}
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  fill: #d9d9d9;
+}
+
+.footer-bottom {
+  display: flex;
+  gap: 24px;
+  padding-top: 32px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  padding-bottom: 40px;
+}
+.footer-bottom a {
+  color: #c5c4c4;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
 }
