@@ -4,7 +4,12 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-
+h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  color: #212121;
+}
 /* HEADER */
 header {
   background-color: #ffff;
@@ -211,33 +216,83 @@ main {
   }
 }
 
+/* SECTION Friendships are made on Meetup  */
+.friendship p {
+  max-width: 55.875rem;
+  margin-top: 1rem;
+  padding-bottom: 1.75rem;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #707070;
+}
+.friendship-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.375rem;
+}
+
+.friendship-card img {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.friendship-card_h3 {
+  max-width: 292px;
+}
+.friendship-card h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #212121;
+}
+
+.friendship-card p {
+  font-size: 14px;
+  color: #6b6b6b;
+  margin-bottom: 0.75rem;
+}
+
+.read-more {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #00798a;
+}
+
+@media (max-width: 900px) {
+  .friendship-cards {
+    grid-template-columns: 1fr;
+  }
+}
 /* FOOTER */
 footer {
   background: #212121;
 }
 .footer-top {
-  padding-top: 24px;
+  padding-top: 1.5rem;
   display: flex;
-  gap: 18px;
+  gap: 1.125rem;
   align-items: center;
   border-bottom: 1px solid #707070;
-  padding-bottom: 20px;
-  margin-bottom: 24px;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-top h5 {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-
   color: #f6f7f8;
 }
 .footer-content {
   display: flex;
-  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
 }
 .footer-col a {
-  width: 343px;
+  width: 21.4375rem;
   color: #c5c4c4;
   text-decoration: none;
   font-weight: 400;
@@ -273,7 +328,7 @@ footer {
 }
 .footer-icons {
   display: flex;
-  gap: 32px;
+  gap: 2rem;
 }
 .footer-icon {
   width: 30px;
@@ -283,13 +338,13 @@ footer {
 
 .footer-bottom {
   display: flex;
-  gap: 24px;
-  padding-top: 32px;
+  gap: 1.5rem;
+  padding-top: 2rem;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: #ffffff;
-  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
 }
 .footer-bottom a {
   color: #c5c4c4;
@@ -297,4 +352,18 @@ footer {
   font-size: 14px;
   line-height: 20px;
   text-decoration: none;
+}
+@media (max-width: 396px) {
+  .footer-links {
+    display: none;
+  }
+  .footer-content {
+    justify-content: space-between;
+  }
+  .footer-col a {
+    width: 100%;
+  }
+  .footer-bottom a {
+    display: none;
+  }
 }
