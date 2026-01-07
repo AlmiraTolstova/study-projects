@@ -216,6 +216,86 @@ main {
   }
 }
 
+/* SECTION cities on Meetup */
+.city p {
+  padding-top: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #707070;
+}
+
+.city-cards {
+  margin-top: 28px;
+  margin-bottom: 64px;
+  display: flex;
+  justify-content: space-between;
+}
+.city-card {
+  width: 205px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.city-card a {
+  text-decoration: none;
+  padding-top: 24px;
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #212121;
+}
+
+/* SECTION Meetup */
+.meetup-title {
+  margin-bottom: 24px;
+}
+
+.meetup-steps {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+.meetup-step {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  padding: 32px 0px 24px 24px;
+  background: rgba(151, 202, 209, 0.08);
+  border-radius: 8px;
+}
+
+.meetup-step h3 {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #212121;
+}
+
+.meetup-step p {
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212121;
+}
+
+.meetup-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #00798a;
+}
+
+@media (max-width: 768px) {
+  .meetup-steps {
+    flex-direction: column;
+  }
+}
+
 /* SECTION Friendships are made on Meetup  */
 .friendship p {
   max-width: 55.875rem;
