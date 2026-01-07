@@ -145,6 +145,19 @@ header {
 
   color: #ffffff;
 }
+.btn-red {
+  background: #e32359;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  padding: 8px 66px 8px 66px;
+}
 
 /* @media (max-width: 768px) {
   .search {
@@ -213,6 +226,35 @@ main {
   }
   .main-container {
     flex-direction: column;
+  }
+}
+/* Baner Join Meetup */
+.banner-meetup {
+  background: rgba(151, 202, 209, 0.08);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+}
+.banner-meetup_block1 {
+  max-width: 739px;
+  margin-bottom: 32px;
+  margin-left: 56px;
+}
+.banner-meetup_block1 p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 665px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212121;
+}
+.banner-meetup_block1 h2 {
+  margin-top: 36px;
+}
+@media (max-width: 396px) {
+  .banner-meetup {
+    flex-direction: column-reverse;
   }
 }
 
