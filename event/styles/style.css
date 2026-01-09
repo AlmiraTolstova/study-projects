@@ -10,6 +10,23 @@ h2 {
   line-height: 36px;
   color: #212121;
 }
+button {
+  touch-action: manipulation;
+}
+/* xs — mobile */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+  }
+  .container {
+    width: 364px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  .display_none {
+    display: none;
+  }
+}
 /* HEADER */
 header {
   background-color: #ffff;
@@ -17,37 +34,33 @@ header {
 .header-container {
   max-width: 94.5rem;
   margin: auto;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: space-between;
   padding: 0.6875rem 0.6875rem;
   border-bottom: 1px solid #e6e6e6;
+  display: grid;
+  grid-template-columns: auto 892px auto;
 }
+
 .left {
   display: flex;
   align-items: center;
   gap: 2.5rem;
 }
-
 .search {
   display: flex;
   align-items: center;
-  /* border: 1px solid #d9d9d9; */
-  /* border-radius: 8px; */
   overflow: hidden;
   height: 2.625rem;
 }
-
 .search input {
-  /* border: none; */
   outline: none;
-  /* font-style: normal; */
   font-weight: 400;
   font-size: 16px;
   line-height: 1.1875rem;
   color: #707070;
 }
-
 .search input:first-child {
   padding-left: 2.125rem;
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2222%22%20viewBox%3D%220%200%2022%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M15.125%209.625C15.125%2012.6626%2012.6626%2015.125%209.625%2015.125C6.58743%2015.125%204.125%2012.6626%204.125%209.625C4.125%206.58743%206.58743%204.125%209.625%204.125C12.6626%204.125%2015.125%206.58743%2015.125%209.625ZM16.5%209.625C16.5%2013.4219%2013.4219%2016.5%209.625%2016.5C5.82804%2016.5%202.75%2013.4219%202.75%209.625C2.75%205.82804%205.82804%202.75%209.625%202.75C13.4219%202.75%2016.5%205.82804%2016.5%209.625ZM15.0972%2016.0694L14.6271%2015.5993C14.979%2015.3044%2015.3044%2014.979%2015.5993%2014.6271L16.0694%2015.0972L18.8194%2017.8472C19.0879%2018.1157%2019.0879%2018.551%2018.8194%2018.8194C18.551%2019.0879%2018.1157%2019.0879%2017.8472%2018.8194L15.0972%2016.0694Z%22%20fill%3D%22%23707070%22%2F%3E%3C%2Fsvg%3E");
@@ -55,7 +68,6 @@ header {
   background-position: 10px center;
   background-size: 18px;
 }
-
 .search-text {
   border: 1px solid #d9d9d9;
   border-radius: 0.5rem 0rem 0rem 0.5rem;
@@ -70,7 +82,6 @@ header {
   border-bottom: 1px solid #d9d9d9;
   border-right: none;
 }
-
 .search-btn {
   background: #f65858;
   border: none;
@@ -79,32 +90,29 @@ header {
   padding: 0 0.6875rem;
   cursor: pointer;
 }
-
-.right {
-  display: flex;
+.header-btns {
   align-items: center;
   gap: 1.3125rem;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
 }
-
-.right a {
+.header-btns a {
   text-decoration: none;
   font-size: 0.875rem;
   color: #333;
 }
-
 .welt-icon {
   width: 20px;
   height: 20px;
   fill: #212121;
   margin-right: 6px;
 }
-
 .header-language {
   display: flex;
   font-size: 14px;
   align-items: center;
 }
-
 .btn-main {
   border: none;
   background: #008294;
@@ -143,34 +151,81 @@ header {
   color: #ffffff;
 }
 .btn-red {
+  display: block;
+  max-width: 192px;
   background: #e32359;
   border-radius: 8px;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  display: flex;
-  align-items: center;
-  text-align: center;
   color: #ffffff;
   border: none;
   padding: 8px 66px 8px 66px;
 }
 .btn-link-blue {
   border: none;
-  /* padding: 0.5rem 1rem; */
   background: none;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: #00798a;
 }
-/* @media (max-width: 768px) {
-  .search {
-    display: none;
-  }
-} */
 
-@media (max-width: 396px) {
+@media (max-width: 480px) {
+  .header-container {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo buttons"
+      "search search";
+    gap: 10px;
+  }
+  .logo {
+    grid-area: logo;
+    width: 100%;
+  }
+  .header-btns {
+    grid-area: buttons;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .search {
+    grid-area: search;
+    width: 100%;
+    max-width: 342px;
+  }
+  .search input:first-child {
+    width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .box-container {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo buttons "
+      "search search";
+    gap: 10px;
+  }
+
+  .yellow {
+    grid-area: logo;
+    width: 100%;
+  }
+
+  .btns {
+    grid-area: buttons;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grey {
+    grid-area: search;
+    width: 100%;
+  }
+
+  .box {
+    width: 100%;
+  }
+}
+
+/* @media (max-width: 396px) {
   .header-container {
     grid-template-columns: 1fr;
   }
@@ -189,18 +244,16 @@ header {
   .search .location {
     display: none;
   }
-}
+} */
 
 /* MAIN */
-main {
-  background: #707070;
-}
 .container {
-  width: 1196px;
+  /* width: 1196px; */
   margin: auto;
+  max-width: 1196px;
 }
 .main-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   padding-top: 71px;
   padding-bottom: 98px;
@@ -221,16 +274,23 @@ main {
   color: #212121;
   margin-bottom: 24px;
 }
-@media (max-width: 396px) {
-  .container {
-    width: 364px;
-    /* margin-left: 14px;
-    margin-right: 14px; */
-    padding-right: 14px;
-    padding-left: 14px;
-  }
+
+/* xs — mobile */
+@media (max-width: 480px) {
   .main-container {
     flex-direction: column;
+    padding: 32px 0;
+    gap: 24px;
+  }
+  .main-container h1 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .main-container p {
+    font-size: 12px;
+  }
+  .main-container img {
+    width: 100%;
   }
 }
 
@@ -239,15 +299,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 1rem 0rem;
 }
-
 .events-header__left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }
-
 .events-title {
   margin: 0;
   font-weight: 700;
@@ -255,31 +313,35 @@ main {
   line-height: 36px;
   color: #212121;
 }
-
 .location-btn {
   display: inline-flex;
   align-items: center;
-  gap: 24px;
-  padding: 12px 12px 8px 12px;
+  gap: 1.5rem;
+  padding: 0.75rem 0.75rem 0.5rem 0.75rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   color: #00798a;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
   background: #f3f9f9;
 }
-
 .location-btn:hover {
   background-color: #d2eff3;
 }
-
 .location-icon {
   color: #00798a;
 }
-
 .events-link:hover {
   text-decoration: underline;
+}
+
+/* xs — mobile */
+@media (max-width: 480px) {
+  .events-title {
+    font-size: 20px;
+    line-height: 25px;
+  }
 }
 
 /* SECTION Upcoming online events */
@@ -359,6 +421,22 @@ main {
   gap: 0.375rem;
 }
 
+/* xs — mobile */
+@media (max-width: 480px) {
+  .slider {
+    gap: 16px;
+  }
+
+  .card {
+    min-width: 260px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
 /* Baner Join Meetup */
 .banner-meetup {
   background: rgba(151, 202, 209, 0.08);
@@ -369,7 +447,7 @@ main {
 .banner-meetup_block1 {
   max-width: 46.1875rem;
   margin-bottom: 2rem;
-  margin-left: 3, 5rem;
+  margin-left: 3.5rem;
 }
 .banner-meetup_block1 p {
   margin-top: 1rem;
@@ -383,39 +461,93 @@ main {
 .banner-meetup_block1 h2 {
   margin-top: 2.25rem;
 }
-@media (max-width: 396px) {
+
+.banner-meetup {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+/* вложенный контейнер тоже grid */
+.banner-meetup > div:first-child {
+  display: grid;
+  gap: 10px;
+}
+
+/* xs — mobile */
+@media (max-width: 480px) {
   .banner-meetup {
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
+  }
+  /* задаём порядок через grid-area */
+  .banner-title {
+    grid-area: banner-title;
+  }
+  .banner-img {
+    grid-area: banner-img;
+  }
+  .banner-btn {
+    grid-area: banner-btn;
+    justify-self: center;
+    margin-bottom: 32px;
+  }
+  .banner-p {
+    grid-area: banner-p;
+  }
+  .banner-meetup {
+    grid-template-areas:
+      "banner-title"
+      "banner-img"
+      "banner-p"
+      "banner-btn";
+  }
+  /* отключаем влияние вложенного grid */
+  .banner-meetup > div:first-child {
+    display: contents;
+  }
+  .block-meetup {
+    background: #f7fbfb;
+  }
+  .banner-meetup {
+    background: none;
+  }
+  .banner-meetup_block1 {
+    margin-left: 0px;
+    justify-items: center;
+  }
+  .banner-meetup_block1 p {
+    margin-top: 1rem;
+    margin-bottom: 1.375rem;
+    font-size: 12px;
   }
 }
 
-/* SECTION top categories */
+/* SECTION TOP CATEGORIES */
 .categories-block {
-  margin-top: 64px;
+  margin-top: 4rem;
 }
 .categories-block h2 {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 .categories {
   display: flex;
-  margin-bottom: 64px;
+  margin-bottom: 4rem;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .category {
-  padding-top: 22px;
-  width: 135px;
+  width: 8.4375rem;
   background: rgba(151, 202, 209, 0.08);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  padding-bottom: 16px;
+  padding: 1.375rem 1.125rem 1rem 1.125rem;
+  height: 7rem;
 }
 .category img {
-  width: 20px;
-  padding-bottom: 6px;
+  width: 1.25rem;
+  padding-bottom: 0.375rem;
 }
 .category a {
   text-decoration: none;
@@ -423,25 +555,33 @@ main {
   font-size: 16px;
   line-height: 24px;
   color: #212121;
-  max-width: 84px;
 }
-@media (max-width: 396px) {
+
+/* xs — mobile */
+@media (max-width: 480px) {
   .categories {
-    row-gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    /* justify-self: center; */
+    margin-bottom: 3rem;
+  }
+  .category {
+    width: 100%;
   }
 }
-/* SECTION cities on Meetup */
+
+/* SECTION CITIES */
 .city p {
-  padding-top: 16px;
+  padding-top: 1rem;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #707070;
 }
-
 .city-cards {
-  margin-top: 28px;
-  margin-bottom: 64px;
+  margin-top: 1.75rem;
+  margin-bottom: 4rem;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -455,56 +595,67 @@ main {
 }
 .city-card a {
   text-decoration: none;
-  padding-top: 24px;
+  padding-top: 1.5rem;
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
   color: #212121;
 }
-@media (max-width: 396px) {
-  .city-card {
-    max-width: 9.5rem;
+
+/* xs — mobile */
+@media (max-width: 480px) {
+  .city p {
+    font-size: 12px;
+  }
+  .city-cards {
+    margin-top: 1.75rem;
+    margin-bottom: 1.5rem;
+    gap: 1.125rem;
+    display: grid;
+    justify-self: center;
+    grid-template-columns: 1fr 1fr;
   }
   .city-card img {
     width: 9.5rem;
   }
+  .city-card a {
+    padding-top: 1.125rem;
+    font-size: 15px;
+    line-height: 21px;
+  }
 }
 
-/* SECTION Meetup */
+/* SECTION MEETUP */
 .meetup-title {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
-
 .meetup-steps {
   display: flex;
-  gap: 24px;
-  margin-bottom: 64px;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
 }
 .meetup-step {
   flex: 1;
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
   padding: 32px 0px 24px 24px;
   background: rgba(151, 202, 209, 0.08);
   border-radius: 8px;
 }
-
 .meetup-step h3 {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
   color: #212121;
 }
-
 .meetup-step p {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #212121;
 }
-
 .meetup-link {
   text-decoration: none;
   font-weight: 500;
@@ -513,13 +664,37 @@ main {
   color: #00798a;
 }
 
-@media (max-width: 768px) {
+/* xs — mobile */
+@media (max-width: 480px) {
+  .meetup-title {
+    margin-bottom: 1.125rem;
+  }
   .meetup-steps {
     flex-direction: column;
+    gap: 0.76rem;
+    border-radius: 0.3125rem;
+    margin-bottom: 1.125rem;
+  }
+  .meetup-icon {
+    width: 1.625rem;
+  }
+  .meetup-step h3 {
+    margin-bottom: 0.625rem;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .meetup-step p {
+    margin-bottom: 0.625rem;
+    font-size: 10px;
+    line-height: 15px;
+  }
+  .meetup-link {
+    font-size: 10px;
+    line-height: 15px;
   }
 }
 
-/* SECTION Friendships are made on Meetup  */
+/* SECTION FRIENDSHIPS  */
 .friendship p {
   max-width: 55.875rem;
   margin-top: 1rem;
@@ -535,7 +710,6 @@ main {
   gap: 2rem;
   margin-bottom: 3.375rem;
 }
-
 .friendship-card img {
   width: 100%;
   margin-bottom: 1.5rem;
@@ -550,13 +724,11 @@ main {
   line-height: 28px;
   color: #212121;
 }
-
 .friendship-card p {
   font-size: 14px;
   color: #6b6b6b;
   margin-bottom: 0.75rem;
 }
-
 .read-more {
   text-decoration: none;
   font-weight: 400;
@@ -564,12 +736,14 @@ main {
   line-height: 24px;
   color: #00798a;
 }
-
-@media (max-width: 900px) {
+/* xs — mobile */
+@media (max-width: 480px) {
   .friendship-cards {
     grid-template-columns: 1fr;
+    margin-bottom: 7.8rem;
   }
 }
+
 /* FOOTER */
 footer {
   background: #212121;
@@ -583,7 +757,6 @@ footer {
   padding-bottom: 1.25rem;
   margin-bottom: 1.5rem;
 }
-
 .footer-top h5 {
   font-weight: 600;
   font-size: 16px;
@@ -602,7 +775,6 @@ footer {
   font-size: 14px;
   line-height: 20px;
 }
-
 .footer-col a:hover {
   color: #fff;
 }
@@ -638,7 +810,6 @@ footer {
   height: 30px;
   fill: #d9d9d9;
 }
-
 .footer-bottom {
   display: flex;
   gap: 1.5rem;
@@ -656,17 +827,89 @@ footer {
   line-height: 20px;
   text-decoration: none;
 }
-@media (max-width: 396px) {
+.footer-links {
+  display: flex;
+  gap: 22px;
+}
+
+/* xs — mobile */
+@media (max-width: 480px) {
+  .footer-top {
+    padding-top: 1.25rem;
+    margin-bottom: 2.125rem;
+    justify-content: space-between;
+    gap: 0px;
+  }
+  .btn-outline {
+    font-size: 16px;
+    padding: 10px 10px;
+  }
   .footer-links {
     display: none;
   }
   .footer-content {
     justify-content: space-between;
+    padding-bottom: 1rem;
   }
   .footer-col a {
     width: 100%;
   }
+  .footer-icons {
+    padding-bottom: 52px;
+  }
   .footer-bottom a {
     display: none;
   }
+  .footer-bottom {
+    padding-top: 0px;
+  }
+}
+
+/* sm — tablet */
+@media (min-width: 576px) and (max-width: 767px) {
+}
+
+/* md — small desktop */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* lg — desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* xl — large desktop */
+@media (min-width: 1200px) {
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: auto 300px auto;
+  align-items: center;
+  gap: 10px;
+}
+.btns {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 10px;
+}
+.box {
+  width: 100px;
+  height: 100px;
+}
+.grey {
+  background: grey;
+}
+.yellow {
+  background: yellow;
+  width: 150px;
+  height: 100px;
+}
+.red {
+  background: red;
+}
+.green {
+  background: green;
+}
+.blue {
+  background: blue;
 }

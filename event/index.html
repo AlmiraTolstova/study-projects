@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <header>
+    <!-- Header -->
+    <!-- <header>
       <div class="header-container">
         <div class="left">
           <img src="images/logo.png" alt="logo" />
@@ -55,11 +56,71 @@
             </svg>
             <span>English</span>
           </div>
-          <button href="#" class="btn-link">Log in</button>
-          <button href="#" class="btn-main">Sign up</button>
+          <button type="button" class="btn-link">Log in</button>
+          <button type="button" class="btn-main">Sign up</button>
+        </div>
+      </div>
+    </header>  -->
+
+    <header>
+      <div class="header-container">
+        <img class="logo" src="images/logo.png" alt="logo" />
+
+        <div class="search">
+          <input class="search-text" type="text" placeholder="Search events" />
+          <input
+            class="location display_none"
+            type="text"
+            value="Mountain View, CA"
+          />
+          <button class="search-btn">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M15.125 9.625C15.125 12.6626 12.6626 15.125 9.625 15.125C6.58743 15.125 4.125 12.6626 4.125 9.625C4.125 6.58743 6.58743 4.125 9.625 4.125C12.6626 4.125 15.125 6.58743 15.125 9.625ZM16.5 9.625C16.5 13.4219 13.4219 16.5 9.625 16.5C5.82804 16.5 2.75 13.4219 2.75 9.625C2.75 5.82804 5.82804 2.75 9.625 2.75C13.4219 2.75 16.5 5.82804 16.5 9.625ZM15.0972 16.0694L14.6271 15.5993C14.979 15.3044 15.3044 14.979 15.5993 14.6271L16.0694 15.0972L18.8194 17.8472C19.0879 18.1157 19.0879 18.551 18.8194 18.8194C18.551 19.0879 18.1157 19.0879 17.8472 18.8194L15.0972 16.0694Z"
+                fill="#fff"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="header-btns">
+          <div class="header-language">
+            <svg class="welt-icon" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10.0003 17.0837C10.7695 17.0837 11.6793 16.5575 12.464 15.2497C12.6935 14.8673 12.9004 14.4342 13.0779 13.9587H6.92273C7.10022 14.4342 7.30719 14.8673 7.53666 15.2497C8.32132 16.5575 9.23116 17.0837 10.0003 17.0837ZM6.54964 12.7087C6.35852 11.8802 6.25033 10.9676 6.25033 10.0003C6.25033 9.03308 6.35852 8.12042 6.54964 7.29199H13.451C13.6422 8.12042 13.7503 9.03308 13.7503 10.0003C13.7503 10.9676 13.6422 11.8802 13.451 12.7087H6.54964ZM14.4013 13.9587C14.1162 14.8377 13.7389 15.6216 13.2912 16.2744C14.3324 15.7272 15.2207 14.9283 15.8753 13.9587H14.4013ZM16.5474 12.7087H14.7303C14.9053 11.8595 15.0003 10.9484 15.0003 10.0003C15.0003 9.05224 14.9053 8.14113 14.7303 7.29199H16.5474C16.893 8.12634 17.0837 9.04108 17.0837 10.0003C17.0837 10.9596 16.893 11.8743 16.5474 12.7087ZM5.27032 12.7087H3.4532C3.10768 11.8743 2.91699 10.9596 2.91699 10.0003C2.91699 9.04108 3.10768 8.12634 3.4532 7.29199H5.27032C5.09533 8.14113 5.00033 9.05224 5.00033 10.0003C5.00033 10.9484 5.09533 11.8595 5.27032 12.7087ZM4.12535 13.9587H5.5993C5.88452 14.8377 6.26176 15.6216 6.70951 16.2744C5.66828 15.7272 4.77994 14.9283 4.12535 13.9587ZM6.92273 6.04199H13.0779C12.9004 5.56643 12.6935 5.13333 12.464 4.75089C11.6793 3.44313 10.7695 2.91699 10.0003 2.91699C9.23116 2.91699 8.32132 3.44313 7.53666 4.75089C7.30719 5.13333 7.10022 5.56643 6.92273 6.04199ZM14.4013 6.04199H15.8753C15.2207 5.07234 14.3324 4.27348 13.2912 3.72621C13.7389 4.3791 14.1162 5.16299 14.4013 6.04199ZM6.70951 3.72621C6.26176 4.37911 5.88451 5.16299 5.5993 6.04199H4.12534C4.77994 5.07234 5.66828 4.27348 6.70951 3.72621ZM10.0003 1.66699C14.6027 1.66699 18.3337 5.39795 18.3337 10.0003C18.3337 14.6027 14.6027 18.3337 10.0003 18.3337C5.39795 18.3337 1.66699 14.6027 1.66699 10.0003C1.66699 5.39795 5.39795 1.66699 10.0003 1.66699Z"
+                fill="#212121"
+              />
+            </svg>
+            <span>English</span>
+          </div>
+          <button type="button" class="btn-link">Log in</button>
+          <button type="button" class="btn-main">Sign up</button>
         </div>
       </div>
     </header>
+    <!-- <div class="container">
+      <div class="box-container">
+        <div class="yellow">Logo</div>
+        <div class="box grey">Search</div>
+        <div class="btns">
+          <div class="box red">English</div>
+          <div class="box green">Log in</div>
+          <div class="box blue">Sign up</div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Main -->
     <main>
       <div class="container main-container">
         <div>
@@ -71,10 +132,11 @@
           </p>
           <button class="btn-main">Join Meetup</button>
         </div>
-        <img src="images/main/irl_event.svg.png" alt="image" />
+        <img src="images/main/irl_event.png" alt="image" />
       </div>
     </main>
 
+    <!-- Events near -->
     <section>
       <div class="container events-header">
         <div class="events-header__left">
@@ -101,7 +163,7 @@
           </button>
         </div>
 
-        <a href="#" class="btn-link-blue">See all events</a>
+        <a href="#" class="btn-link-blue display_none">See all events</a>
       </div>
       <div class="container"></div>
     </section>
@@ -211,18 +273,18 @@
     </section>
 
     <!-- Banner Join Meetup -->
-    <section>
+    <section class="block-meetup">
       <div class="container banner-meetup">
         <div class="banner-meetup_block1">
-          <h2>Join Meetup</h2>
-          <p>
+          <h2 class="banner-title">Join Meetup</h2>
+          <p class="banner-p">
             People use Meetup to meet new people, learn new things, find
             support, get out of their comfort zones, and pursue their passions,
             together. Membership is free.
           </p>
-          <button class="btn-red">Sign up</button>
+          <button class="btn-red banner-btn">Sign up</button>
         </div>
-        <div><img src="images/image.png" alt="" /></div>
+        <div class="banner-img"><img src="images/image.png" alt="" /></div>
       </div>
     </section>
 
@@ -273,7 +335,7 @@
       </div>
     </section>
 
-    <!-- Popular cities on Meetup -->
+    <!-- Cities on Meetup -->
     <section>
       <div class="container city">
         <h2>Popular cities on Meetup</h2>
@@ -283,24 +345,31 @@
         </p>
         <div class="city-cards">
           <div class="city-card">
-            <img src="images/cities/Link → new_york.webp.png" alt="" />
+            <img src="images/cities/new_york.png" alt="new-york city" />
             <a href="#">New York</a>
           </div>
           <div class="city-card">
-            <img src="images/cities/Link → san_francisco.webp.png" alt="" />
+            <img
+              src="images/cities/san_francisco.png"
+              alt="san-francisco city"
+            />
             <a href="#">San Francisco</a>
           </div>
           <div class="city-card">
-            <img src="images/cities/Link → chicago.webp.png" alt="" />
+            <img src="images/cities/chicago.png" alt="chicago city" />
             <a href="#">Chicago</a>
           </div>
           <div class="city-card">
-            <img src="images/cities/Link → nashville.webp.png" alt="" />
+            <img src="images/cities/nashville.png" alt="nashville" />
             <a href="#">Nashville</a>
           </div>
           <div class="city-card">
-            <img src="images/cities/Link → miami.webp.png" alt="" />
-            <a href="#">Miami</a>
+            <img
+              class="display_none"
+              src="images/cities/miami.png"
+              alt="miami city"
+            />
+            <a class="display_none" href="#">Miami</a>
           </div>
         </div>
       </div>
@@ -313,8 +382,12 @@
 
         <div class="meetup-steps">
           <article class="meetup-step">
-            <div class="icon">
-              <img src="icons/meetup/search.svg.svg" alt="" />
+            <div>
+              <img
+                class="meetup-icon"
+                src="icons/meetup/search.svg.svg"
+                alt=""
+              />
             </div>
             <div>
               <h3>Discover events and groups</h3>
@@ -327,8 +400,8 @@
           </article>
 
           <article class="meetup-step">
-            <div class="icon">
-              <img src="icons/meetup/plus.svg.svg" alt="" />
+            <div>
+              <img class="meetup-icon" src="icons/meetup/plus.svg.svg" alt="" />
             </div>
             <div>
               <h3>Start a group to host events</h3>
@@ -356,7 +429,7 @@
         <div class="friendship-cards">
           <article class="friendship-card">
             <img
-              src="images/friendships/Link → first_article.webp.png"
+              src="images/friendships/first_article.png"
               alt="Brunch with friends"
             />
             <h3 class="friendship-card_h3">
@@ -372,7 +445,7 @@
 
           <article class="friendship-card">
             <img
-              src="images/friendships/Link → second_article.webp.png"
+              src="images/friendships/second_article.png"
               alt="Friends hiking together"
             />
             <h3>How to Turn Casual Connections into Close Friendships</h3>
@@ -386,7 +459,7 @@
 
           <article class="friendship-card">
             <img
-              src="images/friendships/Link → third_article.webp.png"
+              src="images/friendships/third_article.png"
               alt="Friends talking in cafe"
             />
             <h3 class="friendship-card_h3">
@@ -402,13 +475,15 @@
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-top">
           <h5>Create your own Meetup group.</h5>
           <button class="btn-outline">Get Started</button>
         </div>
-        <span></span>
+
         <div class="footer-content">
           <div class="footer-col">
             <h6>Your Account</h6>
@@ -474,16 +549,13 @@
               />
             </svg>
           </div>
-          <div class="footer-links">
+          <div class="footer-links display_none">
             <a
               href="https://www.apple.com/app-store/"
               target="_blank"
               rel="noopener"
             >
-              <img
-                src="icons/footer/Link - Download app from App Store → download_en-US.svg.svg "
-                alt="App Store"
-              />
+              <img src="icons/footer/download_en-US.svg.svg " alt="App Store" />
             </a>
             <a
               href="https://play.google.com/store/"
@@ -491,7 +563,7 @@
               rel="noopener"
             >
               <img
-                src="icons/footer/Link - Download app from Google Play → download_en-US.svg.svg"
+                src="icons/footer/GooglePlaydownload_en-US.svg.svg"
                 alt="App Store"
               />
             </a>
