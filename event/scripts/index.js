@@ -23,6 +23,17 @@ const eventsStore = [
     distance: 25,
   },
   {
+    title: "Over 40s, 50s, & 60s Senior Singles Chat, Meet & Dating Community",
+    description: "Over 40s, 50s, 60s Singles Chat, Meet & Dating Community",
+    date: new Date(2024, 2, 14, 11),
+    image:
+      "https://plus.unsplash.com/premium_photo-1706005542509-a460d6efecb0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    type: "online",
+    attendees: 140,
+    category: "Social Activities",
+    distance: 74,
+  },
+  {
     title: "Book 40+ Appointments Per Month Using AI and Automation",
     description: "New Jersey Business Network",
     date: new Date(2024, 2, 16, 14),
@@ -55,6 +66,17 @@ const eventsStore = [
     distance: 74,
   },
   {
+    title: "INFJ Personality Type - Coffee Shop Meet & Greet",
+    description: "Being an INFJ",
+    date: new Date(2024, 2, 23, 15),
+    image:
+      "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1037&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D%201037w ",
+    type: "offline",
+    attendees: 99,
+    category: "Hobbies and Passions",
+    distance: 50,
+  },
+  {
     title: "All Nations - Manhattan Missions Church Bible Study",
     description: "Manhattan Bible Study Meetup Group",
     date: new Date(2024, 2, 14, 11),
@@ -65,6 +87,36 @@ const eventsStore = [
     distance: 15,
   },
 ];
+const eventsContainer = document.querySelector("#events_container");
+window.addEventListener("load", () => {
+  eventsContainer.innerHTML = "";
+  eventsStore.forEach((element) => {
+    const divCard = document.createElement("div");
+    divCard.classList.add("card");
+    divCard.innerHTML = `
+          <img class="card-img" src=${element.image} />
+            <h3>${element.title}</h3>
+            <p>${element.category}</p>
+            <div class="card-date">
+              <img src="icons/events/date.svg" alt="" aria-hidden="true" />
+              <time datetime="${element.date.toISOString()}"
+                >${element.date.toLocaleString()}</time
+              >
+            </div>
+            <div class="card-event">
+              <div class="card-event_block">
+                <img src="icons/events/check.svg" alt="" />
+                <span> ${element.distance} going</span>
+              </div>
+              <div class="card-event_block">
+                <img src="icons/events/date.svg" alt="" />
+                <span> Free</span>
+              </div>
+            </div>
+    `;
+    eventsContainer.appendChild(divCard);
+  });
+});
 
 const filters = [
   {
