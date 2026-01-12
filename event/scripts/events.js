@@ -245,33 +245,60 @@ const eventsStore = [
 ];
 const eventsContainer = document.querySelector("#events_container");
 
+// function renderCards(eventsStore, eventsContainer) {
+//   eventsContainer.innerHTML = "";
+//   eventsStore.forEach((element) => {
+//     const divCard = document.createElement("div");
+//     divCard.classList.add("card");
+//     divCard.innerHTML = `
+//           <img class="card-img" src=${element.image} />
+//             <h3>${element.title}</h3>
+//             <p>${element.category}</p>
+//             <div class="card-date">
+//               <img src="icons/events/date.svg" alt="" aria-hidden="true" />
+//               <time datetime="${element.date.toISOString()}"
+//                 >${element.date.toLocaleString()}</time
+//               >
+//             </div>
+//             <div class="card-event">
+//               <div class="card-event_block">
+//                 <img src="icons/events/check.svg" alt="" />
+//                 <span> ${element.distance} going</span>
+//               </div>
+//               <div class="card-event_block">
+//                 <img src="icons/events/date.svg" alt="" />
+//                 <span> Free</span>
+//               </div>
+//                 <div>${element.type}</div>
+//             </div>
+//     `;
+//     eventsContainer.appendChild(divCard);
+//   });
+// }
+
 function renderCards(eventsStore, eventsContainer) {
   eventsContainer.innerHTML = "";
   eventsStore.forEach((element) => {
     const divCard = document.createElement("div");
-    divCard.classList.add("card");
-    divCard.innerHTML = `
-          <img class="card-img" src=${element.image} />
-            <h3>${element.title}</h3>
-            <p>${element.category}</p>
-            <div class="card-date">
-              <img src="icons/events/date.svg" alt="" aria-hidden="true" />
-              <time datetime="${element.date.toISOString()}"
-                >${element.date.toLocaleString()}</time
-              >
-            </div>
-            <div class="card-event">
-              <div class="card-event_block">
-                <img src="icons/events/check.svg" alt="" />
-                <span> ${element.distance} going</span>
+    divCard.classList.add("event-card");
+    divCard.innerHTML = `         
+            <img
+              class="event-card_img"
+              src=${element.image} 
+              alt=""
+            />
+            <div class="event-card_info">
+              <div class="event-card_date">
+                <time class="event-card_date" datetime="${element.date.toISOString()}"
+                >${element.date.toLocaleString()}</time</div>
+              <h3 class="event-card_h3">${element.title}</h3>
+              <p class="event-card_p">${element.category}</p>
+              <div>
+                <span class="event-card_attendees">${element.attendees}</span>
+                <span class="event-card_places">${element.distance} going</span>
               </div>
-              <div class="card-event_block">
-                <img src="icons/events/date.svg" alt="" />
-                <span> Free</span>
-              </div>
-                <div>${element.type}</div>
             </div>
-    `;
+      `;
     eventsContainer.appendChild(divCard);
   });
 }

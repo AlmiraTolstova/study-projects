@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 h2 {
   font-weight: 600;
   font-size: 28px;
@@ -451,6 +454,8 @@ header {
     font-size: 16px;
     line-height: 22px;
   }
+
+  /*  */
 }
 
 /* Baner Join Meetup */
