@@ -19,86 +19,115 @@ body {
   background: #fff;
 }
 
-.page {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  padding: 40px;
+.event-page {
+  display: flex;
+  /* gap: 267px; */
+  padding: 4.875rem 0rem 6.25rem;
+  justify-content: space-between;
 }
 
 /* LEFT */
 .events h1 {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
-.events span {
-  font-weight: normal;
-}
-
-.tabs button {
-  background: #e6f2ff;
-  border: 1px solid #1a73e8;
-  color: #1a73e8;
-  padding: 6px 10px;
-  border-radius: 4px;
+.active {
+  background: none;
+  border: none;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #00798a;
+  border-bottom: 0.25rem solid #00798a;
 }
 
 .filters {
   display: flex;
-  gap: 10px;
-  margin: 20px 0;
+  gap: 0.625rem;
+  margin: 1.25rem 0;
 }
 
-.filters button {
-  background: #f1f3f5;
+.filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #f6f7f8;
   border: none;
-  padding: 8px 12px;
-  border-radius: 20px;
+  border-radius: 2.5rem;
+
+  padding: 0.75rem 2.75rem 0.75rem 1.25rem;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  color: #212121;
+
   cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.44064 4.35763C1.61149 4.18678 1.88851 4.18678 2.05936 4.35763L6.89686 9.19517C6.95386 9.25211 7.04614 9.25211 7.10313 9.19517L11.9407 4.35763C12.1115 4.18678 12.3885 4.18678 12.5593 4.35763C12.7302 4.52848 12.7302 4.8055 12.5593 4.97635L7.72181 9.81386C7.32316 10.2125 6.67683 10.2125 6.27818 9.81386L1.44064 4.97635C1.26979 4.8055 1.26979 4.52848 1.44064 4.35763Z' fill='%23212121' stroke='%23212121' stroke-width='1.16667'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px;
+  text-align: left;
 }
 
-.event {
+.event-card {
+  max-width: 37.75rem;
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 15px;
-  padding: 20px 0;
-  border-top: 1px solid #eee;
+  grid-template-columns: 10rem 1fr;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-top: 1px solid #d9d9d9;
+  margin-bottom: 2.5rem;
 }
 
-.event img {
-  border-radius: 6px;
+.event-card img {
+  border-radius: 0.5rem;
+  border: 1px solid red;
+  max-width: 10rem;
 }
 
-.date {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 4px;
+.event-card_date {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.35px;
+  text-transform: uppercase;
+  color: #7c6f50;
 }
 
-.event h3 {
-  margin: 0 0 6px;
+.event-card h3 {
+  margin: 0 0 0.375rem;
+  font-weight: 500;
   font-size: 16px;
+  line-height: 24px;
+  color: #212121;
 }
 
-.event p {
-  margin: 0;
+.event-card p {
+  margin-bottom: 1.75rem;
   color: #555;
 }
 
-small {
-  display: block;
-  margin-top: 6px;
-  color: #777;
+.event-card_attendees {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #707070;
+  margin-right: 1rem;
 }
 
-.alert {
-  color: #e53935;
-  font-weight: bold;
+.event-card_places {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #e32359;
 }
 
 /* RIGHT */
 .map h3 {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .map-box {
@@ -119,4 +148,23 @@ small {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+}
+@media (max-width: 480px) {
+  .event-page {
+    flex-direction: column;
+  }
+
+  .filters {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+  }
+
+  .filter-select {
+    flex: 0 0 auto;
+    min-width: 140px;
+  }
 }

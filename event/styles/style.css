@@ -296,13 +296,13 @@ header {
 }
 
 /* SECTION Events */
-/* .events-header {
+.events-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0rem;
-} */
-.events-header__left {
+  padding: 1.5rem 0rem;
+}
+.events-header_left {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -349,6 +349,10 @@ header {
     font-size: 20px;
     line-height: 25px;
   }
+  .card {
+    /* display: flex;
+    width: 370px; */
+  }
 }
 
 /* SECTION Upcoming online events */
@@ -378,7 +382,7 @@ header {
   /* min-width: 17rem; */
   width: 272px;
   background: #fff;
-  border: 1px solid green;
+  border: 1px solid #d9d9d9;
 }
 
 .card-img {
