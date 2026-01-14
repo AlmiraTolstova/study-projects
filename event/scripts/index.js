@@ -1,5 +1,7 @@
 import { eventsStore } from "./mock_data.js";
 
+const eventsContainer = document.querySelector("#events_container");
+const mediaQuery = window.matchMedia("(max-width: 480px)");
 let mobileView = false;
 
 function renderCards(mobileView) {
@@ -13,18 +15,18 @@ function renderCards(mobileView) {
             <h3>${element.title}</h3>
             <p>${element.category}</p>
             <div class="card-date">
-              <img src="icons/events/date.svg" alt="" aria-hidden="true" />
+              <img src="assets/icons/events/date.svg" alt="" aria-hidden="true" />
               <time datetime="${element.date.toISOString()}"
                 >${element.date.toLocaleString()}</time
               >
             </div>
             <div class="card-event">
               <div class="card-event_block">
-                <img src="icons/events/check.svg" alt="" />
+                <img src="assets/icons/events/check.svg" alt="" />
                 <span> ${element.distance} going</span>
               </div>
               <div class="card-event_block">
-                <img src="icons/events/date.svg" alt="" />
+                <img src="assets/icons/events/date.svg" alt="" />
                 <span> Free</span>
               </div>
             </div>
@@ -54,13 +56,6 @@ function renderCards(mobileView) {
   });
 }
 
-const eventsContainer = document.querySelector("#events_container");
-window.addEventListener("load", () => {
-  renderCards(mobileView);
-});
-
-const mediaQuery = window.matchMedia("(max-width: 480px)");
-
 function handleMediaChange(e) {
   if (e.matches) {
     console.log("≤ 480px — mobile view");
@@ -74,6 +69,10 @@ function handleMediaChange(e) {
     // desktop logic
   }
 }
+
+window.addEventListener("load", () => {
+  renderCards(mobileView);
+});
 
 // первый запуск
 handleMediaChange(mediaQuery);
